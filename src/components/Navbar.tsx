@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import { Button } from './ui/button'
 import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa'
+import { ContactPopover } from './ContactPopover'
+import { MobileMenu } from './MobileMenu'
 
 export function Navbar() {
   return (
@@ -23,6 +25,9 @@ export function Navbar() {
               <Button variant="ghost" asChild>
                 <Link to="/services">Services</Link>
               </Button>
+              <Button variant="ghost" asChild>
+                <ContactPopover />
+              </Button>
             </div>
           </div>
 
@@ -37,6 +42,11 @@ export function Navbar() {
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">
               <FaLinkedin className="h-5 w-5" />
             </a>
+          </div>
+
+          {/* Mobile Menu */}
+          <div className="md:hidden">
+            <MobileMenu />
           </div>
         </div>
       </div>

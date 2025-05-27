@@ -2,10 +2,12 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Button } from './components/ui/button'
 import { Navbar } from './components/Navbar'
 import { ContactForm } from './components/ContactForm'
+import { Footer } from './components/Footer'
+import Services from './pages/Services'
 
 function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="py-20 md:py-28">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -13,7 +15,6 @@ function Home() {
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 Let's move together<br />
-                
               </h1>
               <p className="text-lg md:text-xl text-gray-600 max-w-lg">
                 Transforming ideas into reality through creative design and innovative solutions. Let's build something amazing together.
@@ -42,6 +43,9 @@ function Home() {
 
       {/* Contact Form Section */}
       <ContactForm />
+
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }
@@ -77,6 +81,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/services" element={<Services />} />
         </Routes>
       </div>
     </Router>
