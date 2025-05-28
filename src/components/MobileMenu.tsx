@@ -15,7 +15,7 @@ export function MobileMenu() {
         <Button 
           variant="ghost" 
           size="icon" 
-          className="md:hidden text-gumroad-purple hover:text-gumroad-pink transition-colors"
+          className="md:hidden text-gumroad-pink hover:text-gumroad-pink transition-colors"
         >
           <Menu className="h-6 w-6" />
           <span className="sr-only">Toggle menu</span>
@@ -24,7 +24,7 @@ export function MobileMenu() {
       <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white/95 backdrop-blur-md">
         <nav className="flex flex-col gap-8 pt-8">
           <div className="space-y-1.5">
-            <span className="text-sm font-medium text-gray-500">Menu</span>
+            {/* <span className="text-sm font-medium text-gray-500">Menu</span> */}
             <div className="flex flex-col gap-4">
               <SheetClose asChild>
                 <Link 
@@ -54,12 +54,12 @@ export function MobileMenu() {
           </div>
 
           <div className="space-y-1.5">
-            <span className="text-sm font-medium text-gray-500">Get Started</span>
+            {/* <span className="text-sm font-medium text-gray-500">Get Started</span> */}
             <SheetClose asChild>
               <a
                 href="https://app.acuityscheduling.com/schedule.php?owner=35894702&ref=booking_button"
                 target="_blank"
-                className="inline-flex items-center justify-center w-full h-14 bg-gradient-to-r from-gumroad-purple to-gumroad-pink text-white rounded-xl text-lg font-medium hover:opacity-90 transition-opacity"
+                className="inline-flex items-center justify-center w-full h-14 bg-gumroad-pink text-white rounded-xl text-lg font-medium hover:bg-gumroad-pink/90 transition-colors"
               >
                 Book Now →
               </a>
