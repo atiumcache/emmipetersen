@@ -19,22 +19,22 @@ export const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold text-gray-900">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-600 hover:text-primary-600 transition-colors">
+                <Link to="/" className="text-gray-600 hover:text-black transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-600 hover:text-primary-600 transition-colors">
+                <Link to="/services" className="text-gray-600 hover:text-black transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-600 hover:text-primary-600 transition-colors">
+                <Link to="/about" className="text-gray-600 hover:text-black transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-600 hover:text-primary-600 transition-colors">
+                <Link to="/contact" className="text-gray-600 hover:text-black transition-colors">
                   Contact
                 </Link>
               </li>
@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-primary-600 transition-colors"
+                className="text-gray-600 hover:text-black transition-colors"
               >
                 LinkedIn
               </a>
@@ -57,7 +57,7 @@ export const Footer: React.FC = () => {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-primary-600 transition-colors"
+                className="text-gray-600 hover:text-black transition-colors"
               >
                 GitHub
               </a>

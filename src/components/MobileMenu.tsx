@@ -5,8 +5,8 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger,
+  SheetClose
 } from './ui/sheet'
-import { ContactPopover } from './ContactPopover'
 
 export function MobileMenu() {
   return (
@@ -18,16 +18,40 @@ export function MobileMenu() {
         </Button>
       </SheetTrigger>
       <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-        <nav className="flex flex-col gap-4">
-          <Button variant="ghost" asChild className="justify-start">
-            <Link to="/about">About</Link>
-          </Button>
-          <Button variant="ghost" asChild className="justify-start">
-            <Link to="/services">Services</Link>
-          </Button>
-          <Button variant="ghost" asChild className="justify-start">
-            <ContactPopover />
-          </Button>
+        <nav className="flex flex-col gap-6 pt-4">
+          <SheetClose asChild>
+            <Link 
+              to="/about" 
+              className="text-lg text-gray-600 hover:text-gray-900 transition-colors py-2 border-b border-gray-100"
+            >
+              About
+            </Link>
+          </SheetClose>
+          <SheetClose asChild>
+            <Link 
+              to="/services" 
+              className="text-lg text-gray-600 hover:text-gray-900 transition-colors py-2 border-b border-gray-100"
+            >
+              Services
+            </Link>
+          </SheetClose>
+          <SheetClose asChild>
+            <Link 
+              to="/contact" 
+              className="text-lg text-gray-600 hover:text-gray-900 transition-colors py-2 border-b border-gray-100"
+            >
+              Contact
+            </Link>
+          </SheetClose>
+          <SheetClose asChild>
+            <a
+              href="https://app.acuityscheduling.com/schedule.php?owner=35894702&ref=booking_button"
+              target="_blank"
+              className="bg-black text-white px-6 py-3 rounded-md text-center hover:bg-gray-800 transition-colors text-lg"
+            >
+              Book Now
+            </a>
+          </SheetClose>
         </nav>
       </SheetContent>
     </Sheet>
