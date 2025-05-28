@@ -1,0 +1,13 @@
+:root {
+  --gumroad-green: #B1C29E;
+  --gumroad-yellow: #FADA7A;
+  --gumroad-pink: #E6B2BA;
+
+  --color-primary: var(--gumroad-green);
+  --color-secondary: var(--gumroad-yellow);
+  --color-accent: var(--gumroad-pink);
+
+  --bg-gumroad-green: var(--gumroad-green);
+  --bg-gumroad-yellow: var(--gumroad-yellow);
+  --bg-gumroad-pink: var(--gumroad-pink);
+}

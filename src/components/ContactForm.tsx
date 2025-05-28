@@ -67,7 +67,7 @@ export function ContactForm() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
               Let's Connect
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gumroad-green">
               Have a question or want to work together? Send me a message!
             </p>
           </div>

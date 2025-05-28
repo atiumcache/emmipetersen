@@ -26,9 +26,9 @@ module.exports = {
   			foreground: 'hsl(var(--foreground))',
   			gumroad: {
   				purple: '#9B51E0',
-  				pink: '#FF90E8',
-  				yellow: '#FFD803',
-  				green: '#00BA88',
+  				pink: '#E6B2BA',
+  				yellow: '#FADA7A',
+  				green: '#B1C29E',
   				blue: '#2D9CDB'
   			},
   			primary: {

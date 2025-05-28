@@ -82,7 +82,7 @@ export function Navbar() {
           <div className="hidden md:flex items-center justify-end h-full ml-auto">
             <Button 
               size="lg" 
-              className="text-lg h-full bg-gumroad-pink text-black hover:bg-gumroad-pink/90 transition-colors rounded-none px-10 -mr-8" 
+              className="text-lg h-full bg-[var(--gumroad-pink)] text-black hover:bg-[var(--gumroad-pink)]/90 transition-colors rounded-none px-10 -mr-8" 
               asChild
             >
               <a

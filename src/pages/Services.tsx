@@ -25,7 +25,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, price, fe
           <span className="text-2xl text-black">{icon}</span>
         </div>
         <h3 className="text-2xl font-bold mb-3">{title}</h3>
-        <p className="text-gray-600 mb-4">{description}</p>
+        <p className="text-gumroad-green mb-4">{description}</p>
         <p className="text-xl font-bold mb-4">{price}</p>
         <ul className="space-y-2 mb-6">
           {features.map((feature, index) => (
@@ -100,7 +100,7 @@ const Services: React.FC = () => {
 
   return (
     <div className="min-h-screen w-full flex flex-col">
-      <div className="bg-yellow-50 w-full px-4 py-12 md:py-16 flex-grow border-b border-black">
+      <div className="bg-[var(--gumroad-yellow)] w-full px-4 py-12 md:py-16 flex-grow border-b border-black">
         <div className="max-w-7xl mx-auto w-full">
           <div className="max-w-3xl mx-auto mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800 text-center">

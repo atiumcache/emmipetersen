@@ -21,12 +21,12 @@ function Home() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black mb-3 md:mb-4">
                 Let's move together
               </h1>
-              <p className="text-base md:text-lg lg:text-xl text-gray-800 mb-4 md:mb-4">
+              <p className="text-base md:text-lg lg:text-xl text-green-500 mb-4 md:mb-4">
                 Transforming ideas into reality through creative design and innovative solutions. Let's build something amazing together.
               </p>
               <Link to="/contact" className="relative w-full md:w-[200px] h-[50px] md:h-[60px] bg-black text-white font-medium text-base md:text-lg flex items-center justify-center group mx-auto">
-                <span className="absolute inset-0 bg-pink-500 transition-transform duration-300 group-hover:translate-y-[3px] group-hover:translate-x-[3px] border border-black z-0" />
-                <span className="absolute inset-0 bg-teal-500 border border-black z-10" />
+                <span className="absolute inset-0 bg-pink-500/10 transition-transform duration-300 group-hover:translate-y-[3px] group-hover:translate-x-[3px] border border-black z-0" />
+                <span className="absolute inset-0 bg-green-500 border border-black z-10" />
                 <span className="absolute inset-0 bg-black transition-transform duration-300 group-hover:translate-y-[-3px] group-hover:translate-x-[-3px] border border-black z-20 flex items-center justify-center">
                   <span className="relative z-10">
                     Send a Message
