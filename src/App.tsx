@@ -12,19 +12,19 @@ import HeadshotWithBlob from './components/OrganicBlob'
 
 function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <div className="md:min-h-[calc(90vh-4rem)] border-r border-b border-l border-black">
+    <div className="min-h-screen flex flex-col bg-pink-100">
+      <div className="border-r border-b border-l border-black">
         <div className="flex flex-col md:flex-row h-full">
-          {/* Left section - Text content */}
-          <div className="flex-1 bg-pink-100 p-12 flex items-center justify-center border-r border-black min-h-[calc(90vh-4rem)]">
-            <div className="max-w-xl">
-              <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight text-black mb-6">
+          {/* Hero content */}
+          <div className="bg-pink-100 p-8 md:p-10 lg:p-12 flex items-center justify-center border-r border-black">
+            <div className="max-w-[90%] mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black mb-3 md:mb-4">
                 Let's move together
               </h1>
-              <p className="text-lg md:text-2xl text-gray-800 mb-8">
+              <p className="text-base md:text-lg lg:text-xl text-gray-800 mb-4 md:mb-4">
                 Transforming ideas into reality through creative design and innovative solutions. Let's build something amazing together.
               </p>
-              <Link to="/contact" className="relative w-[200px] h-[60px] bg-black text-white font-medium text-lg flex items-center justify-center group">
+              <Link to="/contact" className="relative w-full md:w-[200px] h-[50px] md:h-[60px] bg-black text-white font-medium text-base md:text-lg flex items-center justify-center group mx-auto">
                 <span className="absolute inset-0 bg-pink-500 transition-transform duration-300 group-hover:translate-y-[3px] group-hover:translate-x-[3px] border border-black z-0" />
                 <span className="absolute inset-0 bg-teal-500 border border-black z-10" />
                 <span className="absolute inset-0 bg-black transition-transform duration-300 group-hover:translate-y-[-3px] group-hover:translate-x-[-3px] border border-black z-20 flex items-center justify-center">
@@ -35,10 +35,17 @@ function Home() {
               </Link>
             </div>
           </div>
-
-          {/* Right section - Image */}
-          <HeadshotWithBlob />
         </div>
+      </div>
+
+      {/* Mobile image below hero */}
+      <div className="hidden md:block">
+        <HeadshotWithBlob className="w-full h-auto" />
+      </div>
+
+      {/* Desktop image */}
+      <div className="block md:hidden bg-yellow-100 p-4 md:p-0 border-b border-black">
+        <HeadshotWithBlob className="w-full h-auto" />
       </div>
 
       {/* Contact Form Section */}
