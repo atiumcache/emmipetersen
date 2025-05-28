@@ -14,12 +14,23 @@ module.exports = {
   		}
   	},
   	extend: {
+  		fontFamily: {
+  			'brand': ['Syne', 'system-ui', 'sans-serif'],
+  			'sans': ['system-ui', 'sans-serif'],
+  		},
   		colors: {
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
+  			gumroad: {
+  				purple: '#9B51E0',
+  				pink: '#FF90E8',
+  				yellow: '#FFD803',
+  				green: '#00BA88',
+  				blue: '#2D9CDB'
+  			},
   			primary: {
   				'100': '#f5f5f5',
   				'200': '#e5e5e5',
@@ -88,6 +99,10 @@ module.exports = {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
+  		},
+  		backgroundImage: {
+  			'gumroad-gradient': 'linear-gradient(135deg, #9B51E0 0%, #FF90E8 100%)',
+  			'gumroad-yellow': '#FFD803',
   		}
   	}
   },

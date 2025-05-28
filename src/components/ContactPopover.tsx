@@ -12,6 +12,8 @@ import {
 interface ContactPopoverProps {
   buttonText?: string;
   className?: string;
+  children?: React.ReactNode;
+  style?: React.CSSProperties;
 }
 
 export const ContactPopover: React.FC<ContactPopoverProps> = ({ buttonText = "Contact", className }) => {

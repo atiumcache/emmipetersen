@@ -1,6 +1,7 @@
 import React from 'react';
 import { ContactForm } from '../components/ContactForm';
 import { Button } from '../components/ui/button';
+import { FileText, Users, User } from 'lucide-react';
 
 interface ServiceCardProps {
   title: string;
@@ -9,37 +10,42 @@ interface ServiceCardProps {
   features: string[];
   icon: React.ReactNode;
   buttonText: string;
+  color: string;
+  bgColor: string;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, price, features, icon, buttonText }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, price, features, icon, buttonText, color, bgColor }) => {
   return (
-    <div className="bg-white p-8 rounded-lg shadow-lg">
-      <div className="text-gray-600 mb-4 text-4xl">
-        {icon}
-      </div>
-      <h3 className="text-2xl font-semibold mb-3">{title}</h3>
-      <p className="text-gray-600 mb-4">{description}</p>
-      <p className="text-xl font-bold text-gray-600 mb-4">{price}</p>
-      <ul className="space-y-2 mb-6">
-        {features.map((feature, index) => (
-          <li key={index} className="flex items-center">
-            <span className="mr-2 text-gray-600">✓</span>
-            {feature}
-          </li>
-        ))}
-      </ul>
-      <Button 
-        className="w-full bg-black hover:bg-gray-900 text-white"
-        asChild
-      >
-        <a
-          href="https://app.acuityscheduling.com/schedule.php?owner=35894702"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {buttonText}
+    <div className="relative group">
+      {/* Black shadow offset */}
+      <div className="absolute -bottom-2 -right-2 w-full h-full bg-black rounded-3xl"></div>
+      
+      {/* Main card */}
+      <div className={`relative ${bgColor} border-2 border-black rounded-3xl p-8 bg-gradient-to-br`}>
+        <div className={`${color} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border-2 border-black`}>
+          <span className="text-2xl text-black">{icon}</span>
+        </div>
+        <h3 className="text-2xl font-bold mb-3">{title}</h3>
+        <p className="text-gray-600 mb-4">{description}</p>
+        <p className="text-xl font-bold mb-4">{price}</p>
+        <ul className="space-y-2 mb-6">
+          {features.map((feature, index) => (
+            <li key={index} className="flex items-center">
+              <span className="mr-2 text-black">✓</span>
+              {feature}
+            </li>
+          ))}
+        </ul>
+        <a href="https://app.acuityscheduling.com/schedule.php?owner=35894702" target="_blank" className="relative w-[200px] h-[60px] bg-black text-white font-medium text-md flex items-center justify-center">
+          <span className="absolute inset-0 bg-pink-500 transition-transform duration-300 hover:translate-y-[3px] hover:translate-x-[3px] border border-black z-0" />
+          <span className={`absolute inset-0 ${color} border border-black z-10`} />
+          <span className="absolute inset-0 bg-black transition-transform duration-300 hover:translate-y-[-3px] hover:translate-x-[-3px] border border-black z-20 flex items-center justify-center">
+            <span className="relative z-10">
+              {buttonText}
+            </span>
+          </span>
         </a>
-      </Button>
+      </div>
     </div>
   );
 };
@@ -56,8 +62,10 @@ const Services: React.FC = () => {
         "Personalized plan creation",
         "Nutrition guidance overview"
       ],
-      icon: "📋",
-      buttonText: "Book Free Consultation"
+      icon: <FileText className="w-6 h-6" />,
+      buttonText: "Book Free Consultation",
+      color: "bg-gumroad-yellow",
+      bgColor: "from-white to-white"
     },
     {
       title: "Private Classes",
@@ -69,8 +77,10 @@ const Services: React.FC = () => {
         "Flexible scheduling",
         "Progress tracking"
       ],
-      icon: "👤",
-      buttonText: "Book Private Session"
+      icon: <User className="w-6 h-6" />,
+      buttonText: "Book Private Session",
+      color: "bg-gumroad-pink",
+      bgColor: "from-white to-white"
     },
     {
       title: "Semi-Private Classes",
@@ -82,33 +92,27 @@ const Services: React.FC = () => {
         "Social motivation",
         "Structured workouts"
       ],
-      icon: "👥",
-      buttonText: "Book Group Session"
+      icon: <Users className="w-6 h-6" />,
+      buttonText: "Book Group Session",
+      color: "bg-gumroad-green",
+      bgColor: "from-white to-white"
     }
   ];
 
   return (
     <div className="min-h-screen w-full flex flex-col">
-      <div className="bg-gray-50 w-full px-4 py-12 md:py-16 flex-grow">
+      <div className="bg-yellow-50 w-full px-4 py-12 md:py-16 flex-grow border-b border-black">
         <div className="max-w-7xl mx-auto w-full">
           <div className="max-w-3xl mx-auto mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
-              Small Group and Private Training  
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800 text-center">
+              My Coaching Services
             </h1>
-            <p className="text-xl text-gray-700">
-              Choose the training experience that best fits your goals. Whether you prefer one-on-one attention or the energy of small group sessions, we're here to help you succeed.
-            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-8">
             {services.map((service, index) => (
               <ServiceCard
                 key={index}
-                title={service.title}
-                description={service.description}
-                price={service.price}
-                features={service.features}
-                icon={service.icon}
-                buttonText={service.buttonText}
+                {...service}
               />
             ))}
           </div>

@@ -1,48 +1,43 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import { Button } from './components/ui/button'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 import { Navbar } from './components/Navbar'
 import { ContactForm } from './components/ContactForm'
 import { Footer } from './components/Footer'
+import { Link } from 'react-router-dom'
 import Services from './pages/Services'
 import About from './pages/About'
 import Contact from './pages/Contact'
-import { ContactPopover } from './components/ContactPopover'
+
+import HeadshotWithBlob from './components/OrganicBlob'
 
 function Home() {
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="bg-gray-50 md:h-[calc(100vh-4rem)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:h-full">
-          <div className="md:h-full md:flex md:items-center py-12 md:py-0">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              {/* Left column - Text content */}
-              <div className="space-y-6">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black">
-                  Let's move together<br />
-                </h1>
-                <p className="text-lg md:text-xl text-gray-600 max-w-lg">
-                  Transforming ideas into reality through creative design and innovative solutions. Let's build something amazing together.
-                </p>
-                <div className="flex gap-4 pt-4">
-                  <Button size="lg" asChild>
-                    <ContactPopover buttonText="Send a Message" className="bg-black hover:bg-gray-900 text-white" />
-                  </Button>
-                  <Button size="lg" variant="outline" className="bg-white text-black border-black hover:bg-gray-100 " asChild>
-                    <Link to="/services">Learn More</Link>
-                  </Button>
-                </div>
-              </div>
-
-              {/* Right column - Image */}
-              <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
-                <img
-                  src="/headshot1.jpg"
-                  alt="Emmi Petersen headshot"
-                  className="object-cover w-full h-full"
-                />
-              </div>
+      <div className="md:min-h-[calc(90vh-4rem)] border-r border-b border-l border-black">
+        <div className="flex flex-col md:flex-row h-full">
+          {/* Left section - Text content */}
+          <div className="flex-1 bg-pink-100 p-12 flex items-center justify-center border-r border-black min-h-[calc(90vh-4rem)]">
+            <div className="max-w-xl">
+              <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight text-black mb-6">
+                Let's move together
+              </h1>
+              <p className="text-lg md:text-2xl text-gray-800 mb-8">
+                Transforming ideas into reality through creative design and innovative solutions. Let's build something amazing together.
+              </p>
+              <Link to="/contact" className="relative w-[200px] h-[60px] bg-black text-white font-medium text-lg flex items-center justify-center group">
+                <span className="absolute inset-0 bg-pink-500 transition-transform duration-300 group-hover:translate-y-[3px] group-hover:translate-x-[3px] border border-black z-0" />
+                <span className="absolute inset-0 bg-teal-500 border border-black z-10" />
+                <span className="absolute inset-0 bg-black transition-transform duration-300 group-hover:translate-y-[-3px] group-hover:translate-x-[-3px] border border-black z-20 flex items-center justify-center">
+                  <span className="relative z-10">
+                    Send a Message
+                  </span>
+                </span>
+              </Link>
             </div>
           </div>
+
+          {/* Right section - Image */}
+          <HeadshotWithBlob />
         </div>
       </div>
 
