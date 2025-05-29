@@ -29,7 +29,7 @@ export function MobileMenu() {
               <SheetClose asChild>
                 <Link 
                   to="/about" 
-                  className="text-xl text-gray-800 hover:text-gumroad-purple transition-colors"
+                  className="text-xl text-gray-800 hover:text-gumroad-purple transition-colors text-center"
                 >
                   About
                 </Link>
@@ -37,7 +37,7 @@ export function MobileMenu() {
               <SheetClose asChild>
                 <Link 
                   to="/services" 
-                  className="text-xl text-gray-800 hover:text-gumroad-purple transition-colors"
+                  className="text-xl text-gray-800 hover:text-gumroad-purple transition-colors text-center"
                 >
                   Services
                 </Link>
@@ -45,7 +45,7 @@ export function MobileMenu() {
               <SheetClose asChild>
                 <Link 
                   to="/contact" 
-                  className="text-xl text-gray-800 hover:text-gumroad-purple transition-colors"
+                  className="text-xl text-gray-800 hover:text-gumroad-purple transition-colors text-center"
                 >
                   Contact
                 </Link>
@@ -59,7 +59,7 @@ export function MobileMenu() {
               <a
                 href="https://app.acuityscheduling.com/schedule.php?owner=35894702&ref=booking_button"
                 target="_blank"
-                className="inline-flex items-center justify-center w-full h-14 bg-gumroad-pink text-white rounded-xl text-lg font-medium hover:bg-gumroad-pink/90 transition-colors"
+                className="inline-flex items-center justify-center w-full h-14 bg-gumroad-pink text-black rounded-xl text-lg font-medium hover:bg-gumroad-pink/90 transition-colors"
               >
                 Book Now →
               </a>

@@ -1,14 +1,15 @@
 
 interface HeadshotWithBlobProps {
   className?: string;
+  imgPath?: string;
 }
 
-const HeadshotWithBlob: React.FC<HeadshotWithBlobProps> = ({ className = '' }) => {
+const HeadshotWithBlob: React.FC<HeadshotWithBlobProps> = ({ className = '', imgPath = '/headshot1.jpg' }) => {
   return (
-    <div className={`flex-1 bg-yellow-100 p-6 md:p-12 flex items-center justify-center ${className}`}>
+    <div className={`flex-1 p-6 md:p-12 flex items-center justify-center ${className}`}>
       <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] max-h-[80vh]">
         <img
-          src="/headshot1.jpg"
+          src={imgPath}
           alt="Emmi Petersen headshot"
           className="object-cover w-full h-full"
           style={{

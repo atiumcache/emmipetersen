@@ -25,7 +25,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, price, fe
           <span className="text-2xl text-black">{icon}</span>
         </div>
         <h3 className="text-2xl font-bold mb-3">{title}</h3>
-        <p className="text-gumroad-green mb-4">{description}</p>
+        <p className="text-gray-700 mb-4">{description}</p>
         <p className="text-xl font-bold mb-4">{price}</p>
         <ul className="space-y-2 mb-6">
           {features.map((feature, index) => (
@@ -104,7 +104,7 @@ const Services: React.FC = () => {
         <div className="max-w-7xl mx-auto w-full">
           <div className="max-w-3xl mx-auto mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800 text-center">
-              My Coaching Services
+              Coaching Services
             </h1>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-8">

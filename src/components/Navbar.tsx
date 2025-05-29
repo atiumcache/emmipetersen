@@ -3,6 +3,7 @@ import { Button } from './ui/button'
 import { MobileMenu } from './MobileMenu'
 import { useEffect, useState } from 'react'
 
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
 
@@ -38,7 +39,7 @@ export function Navbar() {
           <div className="hidden md:block w-[250px]">
             <Link 
               to="/" 
-              className="text-3xl font-brand font-bold tracking-tight text-white hover:opacity-80 transition-opacity"
+              className="text-3xl font-brand font-bold tracking-tight text-white hover:text-gumroad-yellow transition-colors"
             >
               Emmi Petersen
             </Link>
@@ -49,19 +50,19 @@ export function Navbar() {
             <div className="flex items-baseline space-x-8 pr-10">
               <Link 
                 to="/about" 
-                className="text-white hover:text-gray-300 transition-colors"
+                className="text-white hover:text-gumroad-yellow transition-colors"
               >
                 About
               </Link>
               <Link 
                 to="/services" 
-                className="text-white hover:text-gray-300 transition-colors"
+                className="text-white hover:text-gumroad-yellow transition-colors"
               >
                 Services
               </Link>
               <Link 
                 to="/contact" 
-                className="text-white hover:text-gray-300 transition-colors"
+                className="text-white hover:text-gumroad-yellow transition-colors"
               >
                 Contact
               </Link>
@@ -72,7 +73,7 @@ export function Navbar() {
           <div className="md:hidden">
             <Link 
               to="/" 
-              className="text-xl font-brand font-bold tracking-tight text-white"
+              className="text-xl font-brand font-bold tracking-tight text-white hover:text-gumroad-yellow transition-colors"
             >
               Emmi Petersen
             </Link>
@@ -82,7 +83,7 @@ export function Navbar() {
           <div className="hidden md:flex items-center justify-end h-full ml-auto">
             <Button 
               size="lg" 
-              className="text-lg h-full bg-[var(--gumroad-pink)] text-black hover:bg-[var(--gumroad-pink)]/90 transition-colors rounded-none px-10 -mr-8" 
+              className="text-lg h-full bg-gumroad-yellow text-black hover:bg-gumroad-yellow/90 transition-colors rounded-none px-10 -mr-8" 
               asChild
             >
               <a
