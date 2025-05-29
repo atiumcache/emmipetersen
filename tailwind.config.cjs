@@ -29,7 +29,7 @@ module.exports = {
   				pink: '#E6B2BA',
   				yellow: '#FADA7A',
   				green: '#B1C29E',
-  				blue: '#2D9CDB'
+  				blue: '#ADB2D4'
   			},
   			primary: {
   				'100': '#f5f5f5',

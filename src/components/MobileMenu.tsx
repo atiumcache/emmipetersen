@@ -22,38 +22,38 @@ export function MobileMenu() {
         </Button>
       </SheetTrigger>
       <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white/95 backdrop-blur-md">
-        <nav className="flex flex-col gap-6 pt-12">
-          <div className="space-y-1.5">
-            {/* <span className="text-sm font-medium text-gray-500">Menu</span> */}
-            <div className="flex flex-col gap-4">
-              <SheetClose asChild>
-                <Link 
-                  to="/about" 
-                  className="text-xl text-gray-800 hover:text-gumroad-purple transition-colors text-center"
-                >
-                  About
-                </Link>
-              </SheetClose>
-              <SheetClose asChild>
-                <Link 
-                  to="/services" 
-                  className="text-xl text-gray-800 hover:text-gumroad-purple transition-colors text-center"
-                >
-                  Services
-                </Link>
-              </SheetClose>
-            </div>
+        <nav className="flex flex-col pt-8">
+          <div className="flex flex-col gap-0 pb-8">
+            <h1 className="text-2xl font-bold text-black font-brand text-center">Emmi Petersen</h1>
+            <h2 className="text-lg text-black text-center">Strength Coach</h2>
           </div>
 
           <div className="space-y-4">
-            {/* <span className="text-sm font-medium text-gray-500">Get Started</span> */}
+            <SheetClose asChild>
+            <a
+                href="/about"
+                target="_blank"
+                className="inline-flex items-center justify-center w-full h-14 bg-gumroad-blue text-black rounded-xl text-lg font-medium hover:bg-gumroad-pink/90 transition-colors"
+              >
+                 About
+                </a>
+              </SheetClose>
+            <SheetClose asChild>
+            <a
+                href="/services"
+                target="_blank"
+                className="inline-flex items-center justify-center w-full h-14 bg-gumroad-yellow text-black rounded-xl text-lg font-medium hover:bg-gumroad-pink/90 transition-colors"
+              >
+                 Services
+                </a>
+              </SheetClose>
             <SheetClose asChild>
             <a
                 href="/contact"
                 target="_blank"
                 className="inline-flex items-center justify-center w-full h-14 bg-gumroad-green text-black rounded-xl text-lg font-medium hover:bg-gumroad-pink/90 transition-colors"
               >
-                 Contact Emmi
+                 Contact 
                 </a>
               </SheetClose>
             <SheetClose asChild>
@@ -62,7 +62,7 @@ export function MobileMenu() {
                 target="_blank"
                 className="inline-flex items-center justify-center w-full h-14 bg-gumroad-pink text-black rounded-xl text-lg font-medium hover:bg-gumroad-pink/90 transition-colors"
               >
-                Book Now →
+                Book Session →
               </a>
             </SheetClose>
           </div>
