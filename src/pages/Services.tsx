@@ -100,7 +100,7 @@ const Services: React.FC = () => {
 
   return (
     <div className="min-h-screen w-full flex flex-col">
-      <div className="bg-gumroad-green/30 w-full px-4 py-12 md:py-16 flex-grow border-b border-black">
+      <div className="bg-gumroad-blue/10 w-full px-4 py-12 md:py-16 flex-grow border-b border-black">
         <div className="max-w-7xl mx-auto w-full">
           <div className="max-w-3xl mx-auto mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800 text-center">
