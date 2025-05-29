@@ -15,14 +15,14 @@ export function MobileMenu() {
         <Button 
           variant="ghost" 
           size="icon" 
-          className="md:hidden text-gumroad-pink hover:text-gumroad-pink transition-colors"
+          className="md:hidden text-white"
         >
           <Menu className="h-6 w-6" />
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
       <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white/95 backdrop-blur-md">
-        <nav className="flex flex-col gap-8 pt-8">
+        <nav className="flex flex-col gap-6 pt-12">
           <div className="space-y-1.5">
             {/* <span className="text-sm font-medium text-gray-500">Menu</span> */}
             <div className="flex flex-col gap-4">
@@ -42,19 +42,20 @@ export function MobileMenu() {
                   Services
                 </Link>
               </SheetClose>
-              <SheetClose asChild>
-                <Link 
-                  to="/contact" 
-                  className="text-xl text-gray-800 hover:text-gumroad-purple transition-colors text-center"
-                >
-                  Contact
-                </Link>
-              </SheetClose>
             </div>
           </div>
 
-          <div className="space-y-1.5">
+          <div className="space-y-4">
             {/* <span className="text-sm font-medium text-gray-500">Get Started</span> */}
+            <SheetClose asChild>
+            <a
+                href="/contact"
+                target="_blank"
+                className="inline-flex items-center justify-center w-full h-14 bg-gumroad-green text-black rounded-xl text-lg font-medium hover:bg-gumroad-pink/90 transition-colors"
+              >
+                 Contact Emmi
+                </a>
+              </SheetClose>
             <SheetClose asChild>
               <a
                 href="https://app.acuityscheduling.com/schedule.php?owner=35894702&ref=booking_button"

@@ -46,7 +46,7 @@ function Home() {
       </div>
 
       {/* Contact Form Section */}
-      <div className="bg-white py-12 border-t border-black">
+      <div className="bg-white py-12">
         <div className="max-w-4xl mx-auto px-4">
           <ContactForm />
         </div>

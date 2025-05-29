@@ -8,7 +8,7 @@ export default function About() {
       <div>
         <div className="flex flex-col md:flex-row h-full">
           {/* Hero content */}
-          <div className="bg-gumroad-pink/50 p-8 md:p-12 lg:p-16 flex items-center justify-center border-b border-black md:w-1/2">
+          <div className="bg-gumroad-pink/50 p-8 md:p-12 lg:p-16 flex items-center justify-center border-b border-black md:w-3/5">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-black mb-4 md:mb-6">
                 About Me
@@ -19,7 +19,7 @@ export default function About() {
             </div>
           </div>
           {/* Hero image */}
-          <div className="bg-gumroad-green/50 p-4 border-b border-black md:border-l border-black md:w-1/2">
+          <div className="bg-gumroad-green/50 p-4 border-b border-black md:border-l border-black md:w-2/5">
             <HeadshotWithBlob className="w-full h-auto" imgPath="/headshot2.jpg" />
           </div>
         </div>
@@ -28,8 +28,12 @@ export default function About() {
       {/* Second Hero Section */}
       <div>
         <div className="flex flex-col md:flex-row h-full">
+          {/* Hero image */}
+          <div className="hidden md:block bg-gumroad-green/50 p-4 border-b border-black md:border-r border-black md:w-2/5">
+            <HeadshotWithBlob className="w-full h-auto" imgPath="/headshot3.jpg" />
+          </div>
           {/* Hero content */}
-          <div className="bg-gumroad-yellow/50 p-8 md:p-12 lg:p-16 flex items-center justify-center border-b border-black md:w-1/2">
+          <div className="bg-gumroad-yellow/50 p-8 md:p-12 lg:p-16 flex items-center justify-center border-b border-black md:w-3/5">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-black mb-4 md:mb-6">
                 My Approach
@@ -39,15 +43,11 @@ export default function About() {
               </p>
             </div>
           </div>
-          {/* Hero image */}
-          <div className="bg-gumroad-green/50 p-4 border-b border-black md:border-r border-black md:w-1/2">
-            <HeadshotWithBlob className="w-full h-auto" imgPath="/headshot3.jpg" />
-          </div>
         </div>
       </div>
 
       {/* Contact Form Section */}
-      <div className="bg-white py-12 border-t border-black">
+      <div className="bg-white py-12">
         <div className="max-w-4xl mx-auto px-4">
           <ContactForm />
         </div>
