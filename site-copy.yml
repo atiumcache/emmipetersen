@@ -1,0 +1,68 @@
+# Site Copy for Emmi Petersen Website
+
+# Navigation
+navigation:
+  brand_name: Emmi Petersen
+  tagline: Strength Coach
+  menu_items:
+    - name: About
+      url: /about
+    - name: Services
+      url: /services
+    - name: Contact
+      url: /contact
+
+# Home Page
+home:
+  hero:
+    heading: "Welcome to Emmi Petersen"
+    description: "Your journey to strength starts here"
+
+# About Page
+about:
+  heading: "About Me"
+  description: "Your personal strength coach helping you achieve your fitness goals"
+  content: "With years of experience in strength training and coaching, I help individuals reach their full potential through personalized training programs and expert guidance."
+
+# Services Page
+services:
+  heading: "My Services"
+  description: "Choose the perfect package for your fitness journey"
+  packages:
+    - name: Consultations
+      description: "Initial one-on-one session to assess your fitness level, discuss your goals, and create a personalized plan for your fitness journey."
+      price: "Free Initial Consultation"
+      features:
+        - "Fitness level assessment"
+        - "Goal setting discussion"
+        - "Personalized plan creation"
+
+# Contact Page
+contact:
+  heading: "Get in Touch"
+  description: "Ready to start your fitness journey?"
+  form:
+    fields:
+      - name: Name
+        type: text
+        required: true
+      - name: Email
+        type: email
+        required: true
+      - name: Message
+        type: textarea
+        required: true
+  email: helloemmipetersen@gmail.com
+
+# Footer
+footer:
+  brand_name: Emmi Petersen
+  email: helloemmipetersen@gmail.com
+  copyright: "© 2025 Emmi Petersen. All rights reserved."
+
+# Color Scheme
+brand_colors:
+  primary: "gumroad-blue"
+  secondary: "gumroad-yellow"
+  accent: "gumroad-green"
+  highlight: "gumroad-pink"
