@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Button } from './ui/button'
 import { MobileMenu } from './MobileMenu'
 import { useEffect, useState } from 'react'
+import { BOOKING_LINK } from '../constants'
 
 
 export function Navbar() {
@@ -87,7 +88,7 @@ export function Navbar() {
               asChild
             >
               <a
-                href="https://app.acuityscheduling.com/schedule.php?owner=35894702&ref=booking_button"
+                href={BOOKING_LINK.url}
                 target="_blank"
                 style={{ textDecoration: 'none' }}
               >

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Button } from './ui/button'
 import { Menu } from 'lucide-react'
+import { BOOKING_LINK } from '../constants'
 import {
   Sheet,
   SheetContent,
@@ -42,7 +43,7 @@ export function MobileMenu() {
               </SheetClose>
               <SheetClose asChild>
                 <a
-                  href="https://app.acuityscheduling.com/schedule.php?owner=35945789"
+                  href={BOOKING_LINK.url}
                   target="_blank"
                   className="w-full text-center py-4 text-3xl font-medium hover:text-gumroad-pink transition-colors"
                 >
