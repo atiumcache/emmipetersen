@@ -16,14 +16,14 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, price, features, icon, buttonText, color, bgColor }) => {
   return (
-    <div className="relative group">
+    <article className="relative group">
       {/* Black shadow offset */}
       <div className="absolute -bottom-2 -right-2 w-full bg-black rounded-3xl"></div>
       
       {/* Main card */}
-      <div className={`relative ${bgColor} border-2 border-black rounded-3xl bg-gradient-to-br`}>
+      <section className={`relative ${bgColor} border-2 border-black rounded-3xl bg-gradient-to-br`}>
         <div className="grid grid-rows-[auto_1fr_auto] p-8">
-          <div className="space-y-4">
+          <header className="space-y-4">
             <div className={`${color} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border-2 border-black`}>
               <span className="text-2xl text-black">{icon}</span>
             </div>
@@ -38,9 +38,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, price, fe
                 </li>
               ))}
             </ul>
-          </div>
+          </header>
           <div className="flex items-center pt-8">
-            <a href={`${BOOKING_LINK.url}`} target="_blank" className="relative w-[200px] h-[60px] bg-black text-white font-medium text-md flex items-center justify-center p-4">
+            <a href={`${BOOKING_LINK.fullUrl}`} target="_blank" className="relative w-[200px] h-[60px] bg-black text-white font-medium text-md flex items-center justify-center p-4">
               <span className="absolute inset-0 bg-pink-500 transition-transform duration-300 hover:translate-y-[3px] hover:translate-x-[3px] border border-black z-0" />
               <span className={`absolute inset-0 ${color} border border-black z-10`} />
               <span className="absolute inset-0 bg-black transition-transform duration-300 hover:translate-y-[-3px] hover:translate-x-[-3px] border border-black z-20 flex items-center justify-center">
@@ -51,8 +51,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, price, fe
             </a>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 

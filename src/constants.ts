@@ -1,9 +1,9 @@
 export const BOOKING_LINK = {
   url: '/contact',
-  owner: '35894702',
-  ref: 'booking_button',
+  owner: '',
+  ref: '',
   
   get fullUrl() {
-    return `${this.url}?owner=${this.owner}&ref=${this.ref}`;
+    return this.url;
   }
 };

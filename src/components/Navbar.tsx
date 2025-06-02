@@ -88,7 +88,7 @@ export function Navbar() {
               asChild
             >
               <a
-                href={BOOKING_LINK.url}
+                href={BOOKING_LINK.fullUrl}
                 target="_blank"
                 style={{ textDecoration: 'none' }}
               >
