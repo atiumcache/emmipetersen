@@ -1,6 +1,6 @@
 import React from 'react';
 import { ContactForm } from '../components/ContactForm';
-import { FileText, Users, User } from 'lucide-react';
+import { Users, User } from 'lucide-react';
 import { BOOKING_LINK } from '../constants.ts'
 
 interface ServiceCardProps {
