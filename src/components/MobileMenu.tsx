@@ -42,13 +42,12 @@ export function MobileMenu() {
                 </Link>
               </SheetClose>
               <SheetClose asChild>
-                <a
-                  href={BOOKING_LINK.fullUrl}
-                  target="_blank"
+                <Link
+                  to={BOOKING_LINK.fullUrl}
                   className="w-full text-center py-4 text-3xl font-medium hover:text-gumroad-pink transition-colors"
                 >
                   Book Session →
-                </a>
+                </Link>
               </SheetClose>
             </div>
           </nav>

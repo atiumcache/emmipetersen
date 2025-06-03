@@ -87,13 +87,12 @@ export function Navbar() {
               className="text-lg h-full bg-gumroad-yellow text-black hover:bg-gumroad-yellow/90 transition-colors rounded-none px-10 -mr-8" 
               asChild
             >
-              <a
-                href={BOOKING_LINK.fullUrl}
-                target="_blank"
-                style={{ textDecoration: 'none' }}
+              <Link
+                to={BOOKING_LINK.fullUrl}
+                className="text-decoration-none"
               >
                 Book Now →
-              </a>
+              </Link>
             </Button>
           </div>
 
