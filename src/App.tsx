@@ -9,6 +9,7 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 
 import HeadshotWithBlob from './components/OrganicBlob'
+import NotFound from './pages/NotFound'
 
 function Home() {
   return (
@@ -68,6 +69,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/services" element={<Services />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
