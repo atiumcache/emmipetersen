@@ -6,7 +6,7 @@ See the live website here: [https://emmipetersen.com](https://emmipetersen.com)
 
 ## Features
 
-- Responsive design 
+- Responsive design
 - Modern UI components with smooth animations
 - Mobile-friendly navigation menu
 

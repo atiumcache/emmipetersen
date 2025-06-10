@@ -1,7 +1,7 @@
 :root {
-  --gumroad-green: #B1C29E;
-  --gumroad-yellow: #FADA7A;
-  --gumroad-pink: #E6B2BA;
+  --gumroad-green: #b1c29e;
+  --gumroad-yellow: #fada7a;
+  --gumroad-pink: #e6b2ba;
 
   --color-primary: var(--gumroad-green);
   --color-secondary: var(--gumroad-yellow);

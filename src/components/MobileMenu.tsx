@@ -1,23 +1,14 @@
-import { Link } from 'react-router-dom'
-import { Button } from './ui/button'
-import { Menu } from 'lucide-react'
-import { BOOKING_LINK } from '../constants'
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetClose
-} from './ui/sheet'
+import { Link } from "react-router-dom";
+import { Button } from "./ui/button";
+import { Menu } from "lucide-react";
+import { BOOKING_LINK } from "../constants";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "./ui/sheet";
 
 export function MobileMenu() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button 
-          variant="ghost" 
-          size="icon" 
-          className="md:hidden text-white"
-        >
+        <Button variant="ghost" size="icon" className="md:hidden text-white">
           <Menu className="h-6 w-6" />
           <span className="sr-only">Toggle menu</span>
         </Button>
@@ -27,17 +18,26 @@ export function MobileMenu() {
           <nav className="flex flex-col justify-center flex-1">
             <div className="flex flex-col gap-8">
               <SheetClose asChild>
-                <Link to="/about" className="w-full text-center py-4 text-3xl font-medium hover:text-gumroad-pink transition-colors">
+                <Link
+                  to="/about"
+                  className="w-full text-center py-4 text-3xl font-medium hover:text-gumroad-pink transition-colors"
+                >
                   About
                 </Link>
               </SheetClose>
               <SheetClose asChild>
-                <Link to="/services" className="w-full text-center py-4 text-3xl font-medium hover:text-gumroad-pink transition-colors">
+                <Link
+                  to="/services"
+                  className="w-full text-center py-4 text-3xl font-medium hover:text-gumroad-pink transition-colors"
+                >
                   Services
                 </Link>
               </SheetClose>
               <SheetClose asChild>
-                <Link to="/contact" className="w-full text-center py-4 text-3xl font-medium hover:text-gumroad-pink transition-colors">
+                <Link
+                  to="/contact"
+                  className="w-full text-center py-4 text-3xl font-medium hover:text-gumroad-pink transition-colors"
+                >
                   Contact
                 </Link>
               </SheetClose>
@@ -52,8 +52,7 @@ export function MobileMenu() {
             </div>
           </nav>
         </div>
-
       </SheetContent>
     </Sheet>
-  )
+  );
 }

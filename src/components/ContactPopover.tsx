@@ -1,13 +1,9 @@
-import React from 'react';
-import { useMediaQuery } from '../hooks/use-media-query';
+import React from "react";
+import { useMediaQuery } from "../hooks/use-media-query";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-import { ContactForm } from './ContactForm';
-import { Button } from './ui/button';
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "./ui/dialog";
+import { ContactForm } from "./ContactForm";
+import { Button } from "./ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 
 interface ContactPopoverProps {
   buttonText?: string;
@@ -16,7 +12,10 @@ interface ContactPopoverProps {
   style?: React.CSSProperties;
 }
 
-export const ContactPopover: React.FC<ContactPopoverProps> = ({ buttonText = "Contact", className }) => {
+export const ContactPopover: React.FC<ContactPopoverProps> = ({
+  buttonText = "Contact",
+  className,
+}) => {
   const isDesktop = useMediaQuery("(min-width: 640px)");
 
   if (isDesktop) {
@@ -46,4 +45,4 @@ export const ContactPopover: React.FC<ContactPopoverProps> = ({ buttonText = "Co
       </SheetContent>
     </Sheet>
   );
-}; 
+};

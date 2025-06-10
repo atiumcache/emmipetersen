@@ -1,66 +1,70 @@
-import { useState, useEffect, useRef } from 'react'
-import type { FormEvent } from 'react'
-import emailjs from '@emailjs/browser'
-import { Button } from './ui/button'
+import { useState, useEffect, useRef } from "react";
+import type { FormEvent } from "react";
+import emailjs from "@emailjs/browser";
+import { Button } from "./ui/button";
 
 export function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-  const formRef = useRef<HTMLFormElement>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
+  const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     // Debug log to check environment variables
-    console.log('Environment Variables Check:', {
-      serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'missing',
-      templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'missing',
-      publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'missing',
-      allEnvVars: import.meta.env
-    })
-    
+    console.log("Environment Variables Check:", {
+      serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || "missing",
+      templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "missing",
+      publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "missing",
+      allEnvVars: import.meta.env,
+    });
+
     // Initialize EmailJS with the public key
     if (import.meta.env.VITE_EMAILJS_PUBLIC_KEY) {
-      emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+      emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
     } else {
-      console.error('EmailJS public key is missing from environment variables')
+      console.error("EmailJS public key is missing from environment variables");
     }
-  }, [])
+  }, []);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const form = e.currentTarget
-    setIsSubmitting(true)
-    setSubmitStatus('idle')
+    e.preventDefault();
+    const form = e.currentTarget;
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
 
     try {
-      if (!import.meta.env.VITE_EMAILJS_SERVICE_ID || 
-          !import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 
-          !import.meta.env.VITE_EMAILJS_PUBLIC_KEY) {
-        throw new Error('EmailJS configuration is missing')
+      if (
+        !import.meta.env.VITE_EMAILJS_SERVICE_ID ||
+        !import.meta.env.VITE_EMAILJS_TEMPLATE_ID ||
+        !import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      ) {
+        throw new Error("EmailJS configuration is missing");
       }
 
       await emailjs.sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
-      setSubmitStatus('success')
-      form.reset()
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      );
+      setSubmitStatus("success");
+      form.reset();
     } catch (error) {
-      console.error('Error sending email:', error)
+      console.error("Error sending email:", error);
       if (error instanceof Error) {
-        console.error('Error details:', error.message)
+        console.error("Error details:", error.message);
       }
-      setSubmitStatus('error')
+      setSubmitStatus("error");
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <div className="relative overflow-hidden bg-white">
       {/* Background gradient elements */}
-      
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
@@ -75,7 +79,10 @@ export function ContactForm() {
           <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
                   Name
                 </label>
                 <input
@@ -89,7 +96,10 @@ export function ContactForm() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
                   Email
                 </label>
                 <input
@@ -103,7 +113,10 @@ export function ContactForm() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
                   Message
                 </label>
                 <textarea
@@ -118,16 +131,20 @@ export function ContactForm() {
             </div>
 
             <div>
-              <Button 
-                type="submit" 
-                disabled={isSubmitting || submitStatus === 'success'}
+              <Button
+                type="submit"
+                disabled={isSubmitting || submitStatus === "success"}
                 className="w-full bg-black text-white hover:bg-gray-900 transition-colors"
               >
-                {isSubmitting ? 'Sending...' : submitStatus === 'success' ? 'Message Sent!' : 'Send Message'}
+                {isSubmitting
+                  ? "Sending..."
+                  : submitStatus === "success"
+                    ? "Message Sent!"
+                    : "Send Message"}
               </Button>
             </div>
 
-            {submitStatus === 'error' && (
+            {submitStatus === "error" && (
               <div className="text-red-500 text-center mt-4">
                 There was an error sending your message. Please try again.
               </div>
@@ -136,5 +153,5 @@ export function ContactForm() {
         </div>
       </div>
     </div>
-  )
-} 
+  );
+}

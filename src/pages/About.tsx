@@ -1,5 +1,5 @@
-import { ContactForm } from '../components/ContactForm'
-import HeadshotWithBlob from '../components/OrganicBlob'
+import { ContactForm } from "../components/ContactForm";
+import HeadshotWithBlob from "../components/OrganicBlob";
 
 export default function About() {
   return (
@@ -14,13 +14,19 @@ export default function About() {
                 About Me
               </h1>
               <p className="text-base md:text-lg lg:text-xl text-gray-700 mb-6 md:mb-8">
-              Hi there! I’m Emmi. I love to play outside, wiggle my body, & cook yummy food. I am a lifelong athlete, & I enjoy finding playful ways to challenge my body. I want to help you rediscover what it means to feel embodied, strong, & capable.
+                Hi there! I’m Emmi. I love to play outside, wiggle my body, &
+                cook yummy food. I am a lifelong athlete, & I enjoy finding
+                playful ways to challenge my body. I want to help you rediscover
+                what it means to feel embodied, strong, & capable.
               </p>
             </div>
           </div>
           {/* Hero image */}
           <div className="bg-gumroad-green/50 p-4 border-b border-black md:border-l border-black md:w-2/5">
-            <HeadshotWithBlob className="w-full h-auto" imgPath="/headshot2.jpg" />
+            <HeadshotWithBlob
+              className="w-full h-auto"
+              imgPath="/headshot2.jpg"
+            />
           </div>
         </div>
       </div>
@@ -30,7 +36,10 @@ export default function About() {
         <div className="flex flex-col md:flex-row h-full">
           {/* Hero image */}
           <div className="hidden md:block bg-gumroad-green/50 p-4 border-b border-black md:border-r border-black md:w-2/5">
-            <HeadshotWithBlob className="w-full h-auto" imgPath="/headshot3.jpg" />
+            <HeadshotWithBlob
+              className="w-full h-auto"
+              imgPath="/headshot3.jpg"
+            />
           </div>
           {/* Hero content */}
           <div className="bg-gumroad-yellow/50 p-8 md:p-12 lg:p-16 flex items-center justify-start border-b border-black md:w-3/5">
@@ -40,7 +49,9 @@ export default function About() {
               </h2>
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <h3 className="text-xl font-semibold text-gray-800">Certifications & Education</h3>
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    Certifications & Education
+                  </h3>
                   <ul className="list-disc list-inside space-y-2 text-gray-700">
                     <li>NASM Certified Personal Trainer</li>
                     <li>NASM Certified Nutrition Coach</li>
@@ -49,7 +60,9 @@ export default function About() {
                   </ul>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-xl font-semibold text-gray-800">Clientele</h3>
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    Clientele
+                  </h3>
                   <ul className="list-disc list-inside space-y-2 text-gray-700">
                     <li>Clients living in larger bodies</li>
                     <li>Those managing scoliosis and arthritis</li>
@@ -72,5 +85,5 @@ export default function About() {
         </div>
       </div>
     </div>
-  )
-} 
+  );
+}

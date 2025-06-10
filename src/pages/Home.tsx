@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
-import HeadshotWithBlob from '../components/OrganicBlob';
-import { ContactForm } from '../components/ContactForm';
+import { Link } from "react-router-dom";
+import HeadshotWithBlob from "../components/OrganicBlob";
+import { ContactForm } from "../components/ContactForm";
 
 export default function Home() {
   return (
@@ -14,20 +14,22 @@ export default function Home() {
                 Stronger Together
               </h1>
               <h2 className="text-4xl lg:text-5xl text-gray-800 mb-6 md:mb-8 pb-2">
-                Training to <br className="block"></br>support your life <br className="block"></br><span className="text-black font-style: italic relative group">for life
+                Training to <br className="block"></br>support your life{" "}
+                <br className="block"></br>
+                <span className="text-black font-style: italic relative group">
+                  for life
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white -rotate-2 transform transition-all duration-300 group-hover:translate-y-1 group-hover:-rotate-1" />
-                </span>.
+                </span>
+                .
               </h2>
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 className="relative w-[200px] md:w-[200px] h-[50px] md:h-[60px] bg-black text-white font-medium text-base md:text-lg flex items-center justify-center group mx-auto transition-all duration-300 hover:scale-105"
               >
                 <span className="absolute inset-0 bg-gumroad-yellow transition-transform duration-300 group-hover:translate-y-[3px] group-hover:translate-x-[3px] border border-black z-0" />
                 <span className="absolute inset-0 bg-gumroad-green border border-black z-10" />
                 <span className="absolute inset-0 bg-black transition-transform duration-300 group-hover:translate-y-[-3px] group-hover:translate-x-[-3px] border border-black z-20 flex items-center justify-center">
-                  <span className="relative z-10">
-                    Send a Message
-                  </span>
+                  <span className="relative z-10">Send a Message</span>
                 </span>
               </Link>
             </div>
@@ -46,5 +48,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  )
+  );
 }
