@@ -4,11 +4,11 @@ import { ContactForm } from "../components/ContactForm";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-gumroad-pink/5">
+    <div className="flex-col bg-gumroad-pink/5">
       <div>
         <div className="flex flex-col md:flex-row h-full">
           {/* Hero content */}
-          <div className="bg-gumroad-pink/80 p-6 pt-16 pb-16 md:p-12 lg:p-16 flex items-center justify-center border-b border-black md:w-1/2">
+          <div className="md:h-[calc(100vh-5rem)] bg-gumroad-pink/80 p-6 pt-16 pb-16 md:p-12 lg:p-16 flex items-center justify-center border-b border-black md:w-1/2">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-7xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black mb-4 md:mb-6 font-style: italic">
                 Stronger Together
@@ -35,7 +35,7 @@ export default function Home() {
             </div>
           </div>
           {/* Hero image */}
-          <div className="bg-gumroad-green/50 p-4 border-b border-black md:border-l border-black md:w-1/2">
+          <div className="bg-gumroad-green/50 p-4 border-b border-black md:border-l border-black md:w-1/2 flex items-center justify-center">
             <HeadshotWithBlob className="w-full h-auto" />
           </div>
         </div>
