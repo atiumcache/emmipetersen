@@ -56,7 +56,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           <div className="flex items-center pt-8">
             <Link
               to={`${BOOKING_LINK.fullUrl}`}
-              target="_blank"
               className="relative w-[200px] h-[60px] bg-black text-white font-medium text-md flex items-center justify-center p-4"
             >
               <span className="absolute inset-0 bg-pink-500 transition-transform duration-300 hover:translate-y-[3px] hover:translate-x-[3px] border border-black z-0" />
