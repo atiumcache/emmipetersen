@@ -2,6 +2,7 @@ import React from "react";
 import { ContactForm } from "../components/ContactForm";
 import { Users, User } from "lucide-react";
 import { BOOKING_LINK } from "../constants.ts";
+import { Link } from "react-router-dom";
 
 interface ServiceCardProps {
   title: string;
@@ -53,8 +54,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             </ul>
           </header>
           <div className="flex items-center pt-8">
-            <a
-              href={`${BOOKING_LINK.fullUrl}`}
+            <Link
+              to={`${BOOKING_LINK.fullUrl}`}
               target="_blank"
               className="relative w-[200px] h-[60px] bg-black text-white font-medium text-md flex items-center justify-center p-4"
             >
@@ -65,7 +66,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
               <span className="absolute inset-0 bg-black transition-transform duration-300 hover:translate-y-[-3px] hover:translate-x-[-3px] border border-black z-20 flex items-center justify-center">
                 <span className="relative z-10">{buttonText}</span>
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
