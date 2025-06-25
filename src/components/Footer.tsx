@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
         <div className="text-center text-gray-400 py-2 border-t border-gray-400">
           © {new Date().getFullYear()} Emmi Petersen. All rights reserved.
         </div>
-      </div>
+    </div>
     </footer>
   );
 };

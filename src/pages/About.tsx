@@ -31,6 +31,7 @@ export default function About() {
         </div>
       </div>
 
+    
       {/* Second Hero Section */}
       <div>
         <div className="hidden flex flex-col md:flex-row h-full">
