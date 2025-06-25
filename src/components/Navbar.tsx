@@ -47,7 +47,7 @@ export function Navbar() {
 
           {/* Navigation Links - Right */}
           <div className="hidden md:flex items-center justify-end flex-1">
-            <div className="flex items-baseline space-x-8 pr-10">
+            <div className="flex items-baseline space-x-12 pr-14">
               <Link
                 to="/about"
                 className="text-white hover:text-gumroad-yellow transition-colors"
@@ -60,6 +60,13 @@ export function Navbar() {
               >
                 Services
               </Link>
+              <a
+                href="https://emmipetersen.substack.com"
+                target='_blank'
+                className="text-white hover:text-gumroad-yellow transition-colors"
+              >
+                Newsletter
+              </a>
               <Link
                 to="/contact"
                 className="text-white hover:text-gumroad-yellow transition-colors"
