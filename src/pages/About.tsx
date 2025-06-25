@@ -31,9 +31,10 @@ export default function About() {
         </div>
       </div>
 
+    
       {/* Second Hero Section */}
       <div>
-        <div className="flex flex-col md:flex-row h-full">
+        <div className="hidden flex flex-col md:flex-row h-full">
           {/* Hero image */}
           <div className="hidden md:block bg-gumroad-green/50 p-4 border-b border-black md:border-r border-black md:w-2/5">
             <HeadshotWithBlob
