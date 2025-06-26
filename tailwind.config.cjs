@@ -12,8 +12,10 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        brand: ["Syne", "system-ui", "sans-serif"],
-        sans: ["system-ui", "sans-serif"],
+        brand: ["Syne", "sans-serif"],
+        sans: ["IBM Plex Sans", "sans-serif"],
+        cine: ["GT Cinetype", 'sans-serif'],
+        round8: ["Round8", 'sans-serif']
       },
       colors: {
         border: "hsl(var(--border))",

@@ -13,6 +13,12 @@ body {
   text-align: center;
 }
 
+h1 {
+  margin: 0;
+  line-height: 1;
+  vertical-align: bottom;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

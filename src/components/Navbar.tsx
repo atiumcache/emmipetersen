@@ -8,98 +8,71 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    // Load Acuity button script
-    const script = document.createElement("script");
-    script.src = "https://embed.acuityscheduling.com/embed/button/35894702.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    // Handle scroll effect
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      // Cleanup
-      document.body.removeChild(script);
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
-      className={`sticky top-0 z-50 border-b-2 border-black transition-all duration-200 ${
-        isScrolled ? "bg-black/90" : "bg-black"
+      className={`sticky top-0 z-50 transition-all duration-200 ${
+        isScrolled ? "bg-black shadow-lg" : "bg-black"
       }`}
     >
-      <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <div className="hidden md:block w-[250px]">
+      <div className="container mx-auto px-4 py-4">
+        <div className="grid grid-cols-3 items-center font-sans uppercase">
+          {/* Center - Logo */}
+          <div className="flex justify-start">
             <Link
               to="/"
-              className="text-3xl font-brand font-bold tracking-tight text-white hover:text-gumroad-yellow transition-colors"
+              className="text-white hover:opacity-90 transition-opacity flex justify-center"
             >
-              Emmi Petersen
+              <img src="/logo-test.png" alt="Logo" className="h-[5em] w-auto" />
             </Link>
           </div>
 
-          {/* Navigation Links - Right */}
-          <div className="hidden md:flex items-center justify-end flex-1">
-            <div className="flex items-baseline space-x-12 pr-14">
-              <Link
-                to="/about"
-                className="text-white hover:text-gumroad-yellow transition-colors"
-              >
-                About
-              </Link>
-              <Link
-                to="/services"
-                className="text-white hover:text-gumroad-yellow transition-colors"
-              >
-                Services
-              </Link>
-              <a
-                href="https://emmipetersen.substack.com"
-                target='_blank'
-                className="text-white hover:text-gumroad-yellow transition-colors"
-              >
-                Newsletter
-              </a>
-              <Link
-                to="/contact"
-                className="text-white hover:text-gumroad-yellow transition-colors"
-              >
-                Contact
-              </Link>
-            </div>
-          </div>
-
-          {/* Mobile-only logo */}
-          <div className="md:hidden">
+          {/* Left side - Menu options */}
+          <div className="hidden md:flex items-center justify-center space-x-8">
             <Link
-              to="/"
-              className="text-xl font-brand font-bold tracking-tight text-white hover:text-gumroad-yellow transition-colors"
+              to="/about"
+              className="text-white hover:text-amber-300 transition-colors"
             >
-              Emmi Petersen
+              About
+            </Link>
+            <Link
+              to="/work"
+              className="text-white hover:text-amber-300 transition-colors"
+            >
+              Work
+            </Link>
+            <Link
+              to="/contact"
+              className="text-white hover:text-amber-300 transition-colors"
+            >
+              Contact
             </Link>
           </div>
 
-          {/* Book Now Button - Right */}
-          <div className="hidden md:flex items-center justify-end h-full ml-auto">
+          {/* Right side - Menu option + Button */}
+          <div className="hidden md:flex items-center justify-end space-x-8">
             <Button
-              size="lg"
-              className="text-lg h-full bg-gumroad-yellow text-black hover:bg-gumroad-yellow/90 transition-colors rounded-none px-10 -mr-8"
               asChild
+              variant="outline"
+              className="bg-transparent border-white text-white hover:bg-white/10 hover:border-amber-300 hover:text-amber-300 transition-colors"
             >
-              <Link to={BOOKING_LINK.fullUrl} className="text-decoration-none">
-                Book Now →
-              </Link>
+              <a
+                href={BOOKING_LINK.fullUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book Now
+              </a>
             </Button>
           </div>
 
-          {/* Mobile Menu */}
+          {/* Mobile menu toggle */}
           <div className="md:hidden">
             <MobileMenu />
           </div>

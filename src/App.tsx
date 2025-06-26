@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./fonts.css";
 
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
-import Home from "./pages/Home";
+import { Home, Home2, Home3 } from "./pages/Home";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -22,7 +23,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );

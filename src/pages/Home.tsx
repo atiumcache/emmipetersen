@@ -1,50 +1,236 @@
 import { Link } from "react-router-dom";
-import HeadshotWithBlob from "../components/OrganicBlob";
 import { ContactForm } from "../components/ContactForm";
+import { Button } from "../components/ui/button";
+import { useEffect, useState, useMemo } from "react";
 
-export default function Home() {
+export function Home3() {
   return (
-    <div className="flex-col bg-gumroad-pink/5">
-      <div>
-        <div className="flex flex-col md:flex-row h-full">
-          {/* Hero content */}
-          <div className="md:h-[calc(100vh-5rem)] bg-gumroad-pink/80 p-6 pt-16 pb-16 md:p-12 lg:p-16 flex items-center justify-center border-b border-black md:w-1/2">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-7xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black mb-4 md:mb-6 font-style: italic">
-                Stronger Together
-              </h1>
-              <h2 className="text-4xl lg:text-5xl text-gray-800 mb-6 md:mb-8 pb-2">
-                Training to <br className="block"></br>support your life{" "}
-                <br className="block"></br>
-                <span className="text-black font-style: italic relative group">
-                  for life
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white -rotate-2 transform transition-all duration-300 group-hover:translate-y-1 group-hover:-rotate-1" />
-                </span>
-                .
-              </h2>
-              <Link
-                to="/contact"
-                className="relative w-[200px] md:w-[200px] h-[50px] md:h-[60px] bg-black text-white font-medium text-base md:text-lg flex items-center justify-center group mx-auto transition-all duration-300 hover:scale-105"
-              >
-                <span className="absolute inset-0 bg-gumroad-yellow transition-transform duration-300 group-hover:translate-y-[3px] group-hover:translate-x-[3px] border border-black z-0" />
-                <span className="absolute inset-0 bg-gumroad-green border border-black z-10" />
-                <span className="absolute inset-0 bg-black transition-transform duration-300 group-hover:translate-y-[-3px] group-hover:translate-x-[-3px] border border-black z-20 flex items-center justify-center">
-                  <span className="relative z-10">Send a Message</span>
-                </span>
-              </Link>
-            </div>
-          </div>
-          {/* Hero image */}
-          <div className="bg-gumroad-green/50 p-4 border-b border-black md:border-l border-black md:w-1/2 flex items-center justify-center">
-            <HeadshotWithBlob className="w-full h-auto" />
+    <div className="min-h-[calc(100vh-var(--navbar-height))] relative">
+      <div className="absolute bottom-0 left-1/2 w-[50vw] h-auto">
+        <img
+          src="/rainbow_emmi.png"
+          alt="Rainbow Emmi"
+          className="w-full h-auto"
+        />
+      </div>
+      <div className="container mx-auto px-8 h-full flex items-center justify-end">
+        <h1 className="text-white text-right text-8xl font-round8">
+          Stronger <br />
+          Together
+        </h1>
+      </div>
+    </div>
+  );
+}
+
+export function Home2() {
+  const [showText1, setShowText1] = useState(false);
+  const [showText2, setShowText2] = useState(false);
+  const [showText3, setShowText3] = useState(false);
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    // Show text after images are done animating
+    const textTimer = setTimeout(() => {
+      setShowText1(true);
+
+      // Show button after text appears
+      const buttonTimer = setTimeout(() => {
+        setShowText2(true);
+      }, 2000);
+
+      return () => clearTimeout(buttonTimer);
+    }, 2000); // Slightly after images finish
+
+    return () => clearTimeout(textTimer);
+  }, []);
+
+  return (
+    <div className="min-h-[calc(100vh-var(--navbar-height))] bg-white flex flex-col">
+      <div className="flex justify-start bg-gumroad-green px-8 items-end pt-8">
+        <h1 className="font-round8 text-gumroad-yellow text-[18vw] m-0 p-0 leading-[1] -mb-[0.17em] tracking-wide">
+          STRONGER
+        </h1>
+      </div>
+      <div className="flex justify-end bg-gumroad-yellow px-12 items-end pt-8">
+        <h1 className="font-round8 text-gumroad-blue text-[18vw] m-0 p-0 leading-[1] -mb-[0.17em] tracking-wide">
+          TOGETHER
+        </h1>
+      </div>
+      <div className="flex-1 flex flex-col justify-end p-8 bg-gumroad-blue">
+        <div className="flex justify-between items-end text-white">
+          <h2 className="max-w-2xl text-3xl">
+            Let's build strength that feels powerful, personal, and deeply
+            yours—so you can move through life embodied and unstoppable.
+          </h2>
+          <div>
+            <Button
+              asChild
+              variant="outline"
+              className="bg-transparent border-white hover:bg-gumroad-green hover:border-white hover:text-white transition-colors text-2xl py-8 px-8"
+            >
+              <Link to="/contact">Get Started</Link>
+            </Button>
           </div>
         </div>
       </div>
+    </div>
+  );
+}
 
-      {/* Contact Form Section */}
-      <div className="bg-white py-12">
-        <div className="max-w-4xl mx-auto px-4">
-          <ContactForm />
+const imageURLs = [
+  "/bridge.png",
+  "/hero1.png",
+  "/hero2.png",
+  "/headshot1.jpg",
+  "/barbell1.png",
+  "/dumbbell.png",
+  "/fitness1.jpg",
+];
+
+const COLOR_LEVEL = 20;
+const colors = [
+  "bg-red-500/50", // R
+  "bg-orange-500/50", // O
+  "bg-yellow-500/50", // Y
+  "bg-black/0", // G
+  "bg-green-500/50", // B
+  "bg-blue-500/50", // I
+  "bg-violet-500/50", // V
+];
+
+const ImageItem = ({
+  url,
+  index,
+  isVisible,
+}: {
+  url: string;
+  index: number;
+  isVisible: boolean;
+}) => {
+  // Generate a random y-offset between -20% and 20% for staggered effect
+  // Middle image (index 3) will have 0 offset
+  // Using useMemo to ensure the offset is only calculated once
+  const yOffset = useMemo(() => {
+    return index === 3
+      ? 0
+      : Math.random() * (index % 2 === 0 ? -1 : 1) * 40 - 20;
+  }, [index]); // Only recalculate if index changes
+
+  return (
+    <div
+      className={`relative overflow-visible transition-all duration-1000 ease-in-out ${
+        isVisible ? "opacity-100" : "opacity-0 translate-y-0"
+      } ${index === 3 ? "col-span-3" : "col-span-1"}`}
+      style={{
+        transitionDelay: isVisible ? `${index * 150}ms` : "0ms",
+        transform: isVisible ? `translateY(0px)` : "translateY(0px)",
+      }}
+    >
+      <div
+        className={`absolute inset-0 ${colors[index]} z-10 mix-blend-multiply`}
+      />
+      <div className="w-full h-full">
+        <img
+          src={url}
+          alt={`Gallery image ${index + 1}`}
+          className={`w-full h-full object-cover ${index === 3 ? "" : "grayscale"}`}
+        />
+      </div>
+    </div>
+  );
+};
+
+const ImageGrid = () => {
+  const [visibleIndices, setVisibleIndices] = useState<number[]>([]);
+
+  useEffect(() => {
+    // Show first set of images
+    const timeout1 = setTimeout(() => {
+      setVisibleIndices([0, 2, 5]);
+    }, 100);
+
+    // Show second set of images
+    const timeout2 = setTimeout(() => {
+      setVisibleIndices([0, 1, 2, 4, 5, 6]);
+    }, 400);
+
+    // Finally show the middle image
+    const timeout3 = setTimeout(() => {
+      setVisibleIndices((prev) => [...prev, 3]);
+    }, 800);
+
+    return () => {
+      clearTimeout(timeout1);
+      clearTimeout(timeout2);
+      clearTimeout(timeout3);
+    };
+  }, []);
+
+  return (
+    <>
+      {imageURLs.map((url, index) => (
+        <ImageItem
+          key={index}
+          url={url}
+          index={index}
+          isVisible={visibleIndices.includes(index)}
+        />
+      ))}
+    </>
+  );
+};
+
+export function Home() {
+  const [showText, setShowText] = useState(false);
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    // Show text after images are done animating
+    const textTimer = setTimeout(() => {
+      setShowText(true);
+
+      // Show button after text appears
+      const buttonTimer = setTimeout(() => {
+        setShowButton(true);
+      }, 2000);
+
+      return () => clearTimeout(buttonTimer);
+    }, 2000); // Slightly after images finish
+
+    return () => clearTimeout(textTimer);
+  }, []);
+
+  return (
+    <div className="min-h-[calc(100vh-var(--navbar-height))] bg-black flex flex-col justify-between">
+      <div className="grid grid-cols-9 gap-8 h-[60vh] w-full pt-8 px-8">
+        <ImageGrid />
+      </div>
+      <div className="flex justify-between p-8 items-end">
+        <h2
+          className={`text-white font-sans text-4xl max-w-[40vw] transition-opacity duration-1000 ${showText ? "opacity-100" : "opacity-0 translate-y-4"}`}
+          style={{
+            transitionDelay: showText ? "0ms" : "0ms",
+            transitionTimingFunction: "linear",
+          }}
+        >
+          Let’s work together to discover what it means to you to feel embodied,
+          empowered, and strong.
+        </h2>
+        <div
+          className={`transition-opacity duration-1000 ${showButton ? "opacity-100" : "opacity-0 translate-y-8"}`}
+          style={{
+            transitionDelay: showButton ? "0ms" : "0ms",
+            transitionTimingFunction: "linear",
+          }}
+        >
+          <Button
+            asChild
+            variant="outline"
+            className="bg-transparent border-white text-white hover:bg-white hover:border-gray-800 hover:text-black transition-colors text-2xl py-8 px-10"
+          >
+            <Link to="/contact">Get Started →</Link>
+          </Button>
         </div>
       </div>
     </div>

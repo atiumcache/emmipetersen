@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Round8';
+  src: url('/fonts/Round8.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* GT Cinetype Font Family */
+@font-face {
+  font-family: 'GT Cinetype';
+  src: url('/fonts/GT-Cinetype-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Cinetype';
+  src: url('/fonts/GT-Cinetype-Regular-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Cinetype';
+  src: url('/fonts/GT-Cinetype-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Cinetype';
+  src: url('/fonts/GT-Cinetype-Light-Italic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Cinetype';
+  src: url('/fonts/GT-Cinetype-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Cinetype';
+  src: url('/fonts/GT-Cinetype-Bold-Italic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Cinetype Mono';
+  src: url('/fonts/GT-Cinetype-Mono.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
