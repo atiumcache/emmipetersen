@@ -11,11 +11,26 @@ module.exports = {
       },
     },
     extend: {
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        gentlePulse: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)' },
+        },
+      },
+      animation: {
+        'fade-in': 'fadeIn 2s ease-out forwards',
+        'gentlePulse': 'gentlePulse 2s ease-in-out infinite',
+      },
       fontFamily: {
         brand: ["Syne", "sans-serif"],
         sans: ["IBM Plex Sans", "sans-serif"],
         cine: ["GT Cinetype", 'sans-serif'],
-        round8: ["Round8", 'sans-serif']
+        round8: ["Round8", 'sans-serif'],
+        knewave: ["knewave", 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -38,7 +53,7 @@ module.exports = {
           500: "#525252",
           600: "#404040",
           DEFAULT: "#737373",
-          foreground: "#FFFFFF",
+          foreground: "#f1efea",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

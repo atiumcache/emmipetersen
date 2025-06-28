@@ -21,37 +21,45 @@ export function Navbar() {
         isScrolled ? "bg-black shadow-lg" : "bg-black"
       }`}
     >
-      <div className="container mx-auto px-4 py-4">
-        <div className="grid grid-cols-3 items-center font-sans uppercase">
+      <div className="px-8 py-4 m-0 items-center justify-center ">
+        <div className="grid grid-cols-2 md:grid-cols-3 items-center font-sans uppercase">
           {/* Center - Logo */}
           <div className="flex justify-start">
             <Link
               to="/"
-              className="text-white hover:opacity-90 transition-opacity flex justify-center"
+              className="text-white hover:opacity-70 transition-opacity flex justify-center"
             >
-              <img src="/logo-test.png" alt="Logo" className="h-[5em] w-auto" />
+              <img
+                src="/dumbbell-logo.png"
+                alt="Logo"
+                className="w-[4em] h-auto py-3"
+              />
             </Link>
           </div>
 
           {/* Left side - Menu options */}
-          <div className="hidden md:flex items-center justify-center space-x-8">
+          <div className="hidden md:flex items-center justify-center space-x-6">
             <Link
               to="/about"
-              className="text-white hover:text-amber-300 transition-colors"
+              className="text-white hover:text-orange-300 transition-colors duration-500"
             >
               About
             </Link>
+            <p className="text-white">|</p>
             <Link
-              to="/work"
-              className="text-white hover:text-amber-300 transition-colors"
+              to="/services"
+              className="text-white hover:text-green-300 transition-colors duration-500"
             >
-              Work
+              Services
             </Link>
+            <p className="text-white">|</p>
             <Link
-              to="/contact"
-              className="text-white hover:text-amber-300 transition-colors"
+              to="https://emmipetersen.substack.com/"
+              className="text-white hover:text-blue-300 transition-colors duration-500"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Contact
+              Newsletter
             </Link>
           </div>
 
@@ -60,20 +68,14 @@ export function Navbar() {
             <Button
               asChild
               variant="outline"
-              className="bg-transparent border-white text-white hover:bg-white/10 hover:border-amber-300 hover:text-amber-300 transition-colors"
+              className="bg-transparent border-white text-white hover:bg-white hover:border-white hover:text-black duration-300 transition-colors"
             >
-              <a
-                href={BOOKING_LINK.fullUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Book Now
-              </a>
+              <a href={BOOKING_LINK.fullUrl}>Contact</a>
             </Button>
           </div>
 
           {/* Mobile menu toggle */}
-          <div className="md:hidden">
+          <div className="md:hidden text-right">
             <MobileMenu />
           </div>
         </div>

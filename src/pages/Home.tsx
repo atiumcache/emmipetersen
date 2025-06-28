@@ -2,81 +2,7 @@ import { Link } from "react-router-dom";
 import { ContactForm } from "../components/ContactForm";
 import { Button } from "../components/ui/button";
 import { useEffect, useState, useMemo } from "react";
-
-export function Home3() {
-  return (
-    <div className="min-h-[calc(100vh-var(--navbar-height))] relative">
-      <div className="absolute bottom-0 left-1/2 w-[50vw] h-auto">
-        <img
-          src="/rainbow_emmi.png"
-          alt="Rainbow Emmi"
-          className="w-full h-auto"
-        />
-      </div>
-      <div className="container mx-auto px-8 h-full flex items-center justify-end">
-        <h1 className="text-white text-right text-8xl font-round8">
-          Stronger <br />
-          Together
-        </h1>
-      </div>
-    </div>
-  );
-}
-
-export function Home2() {
-  const [showText1, setShowText1] = useState(false);
-  const [showText2, setShowText2] = useState(false);
-  const [showText3, setShowText3] = useState(false);
-  const [showButton, setShowButton] = useState(false);
-
-  useEffect(() => {
-    // Show text after images are done animating
-    const textTimer = setTimeout(() => {
-      setShowText1(true);
-
-      // Show button after text appears
-      const buttonTimer = setTimeout(() => {
-        setShowText2(true);
-      }, 2000);
-
-      return () => clearTimeout(buttonTimer);
-    }, 2000); // Slightly after images finish
-
-    return () => clearTimeout(textTimer);
-  }, []);
-
-  return (
-    <div className="min-h-[calc(100vh-var(--navbar-height))] bg-white flex flex-col">
-      <div className="flex justify-start bg-gumroad-green px-8 items-end pt-8">
-        <h1 className="font-round8 text-gumroad-yellow text-[18vw] m-0 p-0 leading-[1] -mb-[0.17em] tracking-wide">
-          STRONGER
-        </h1>
-      </div>
-      <div className="flex justify-end bg-gumroad-yellow px-12 items-end pt-8">
-        <h1 className="font-round8 text-gumroad-blue text-[18vw] m-0 p-0 leading-[1] -mb-[0.17em] tracking-wide">
-          TOGETHER
-        </h1>
-      </div>
-      <div className="flex-1 flex flex-col justify-end p-8 bg-gumroad-blue">
-        <div className="flex justify-between items-end text-white">
-          <h2 className="max-w-2xl text-3xl">
-            Let's build strength that feels powerful, personal, and deeply
-            yours—so you can move through life embodied and unstoppable.
-          </h2>
-          <div>
-            <Button
-              asChild
-              variant="outline"
-              className="bg-transparent border-white hover:bg-gumroad-green hover:border-white hover:text-white transition-colors text-2xl py-8 px-8"
-            >
-              <Link to="/contact">Get Started</Link>
-            </Button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+import * as motion from "motion/react-client";
 
 const imageURLs = [
   "/bridge.png",
@@ -193,7 +119,7 @@ export function Home() {
       // Show button after text appears
       const buttonTimer = setTimeout(() => {
         setShowButton(true);
-      }, 2000);
+      }, 1000);
 
       return () => clearTimeout(buttonTimer);
     }, 2000); // Slightly after images finish
@@ -218,7 +144,7 @@ export function Home() {
           empowered, and strong.
         </h2>
         <div
-          className={`transition-opacity duration-1000 ${showButton ? "opacity-100" : "opacity-0 translate-y-8"}`}
+          className={`transition-opacity duration-700 ${showButton ? "opacity-100" : "opacity-0 translate-y-8"}`}
           style={{
             transitionDelay: showButton ? "0ms" : "0ms",
             transitionTimingFunction: "linear",

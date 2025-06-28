@@ -3,7 +3,7 @@ import "./fonts.css";
 
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
-import { Home, Home2, Home3 } from "./pages/Home";
+import { Home } from "./pages/Home";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -12,7 +12,7 @@ import NotFound from "./pages/NotFound";
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-black">
         <Navbar />
         <main className="flex-1">
           <Routes>
