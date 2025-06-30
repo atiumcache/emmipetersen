@@ -8,6 +8,7 @@ import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ServicesNew from "./pages/ServicesNew";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services-new" element={<ServicesNew />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

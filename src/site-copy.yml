@@ -15,14 +15,18 @@ navigation:
 # Home Page
 home:
   hero:
-    heading: "Welcome to Emmi Petersen"
-    description: "Your journey to strength starts here"
+    heading: ""
+    description: "Testing."
+    button: "Get Started →"
 
 # About Page
 about:
-  heading: "About Me"
+  heading: "Hi! I'm Emmi."
   description: "Your personal strength coach helping you achieve your fitness goals"
-  content: "With years of experience in strength training and coaching, I help individuals reach their full potential through personalized training programs and expert guidance."
+  content: "I love to play outside, wiggle my body, & cook yummy food. I am a
+            lifelong athlete, & I enjoy finding playful ways to challenge my
+            body. I want to help you rediscover what it means to feel embodied,
+            strong, & capable."
 
 # Services Page
 services:

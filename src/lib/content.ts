@@ -1,10 +1,7 @@
+// src/lib/content.ts
 import yaml from "yaml";
-import path from "path";
-import fs from "fs";
-
-const contentPath = path.join(process.cwd(), "site-copy.yml");
+import siteCopy from "../site-copy.yml?raw"; // Vite's raw import
 
 export const loadContent = () => {
-  const content = fs.readFileSync(contentPath, "utf-8");
-  return yaml.parse(content);
+  return yaml.parse(siteCopy);
 };
