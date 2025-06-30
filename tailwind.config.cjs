@@ -45,6 +45,17 @@ module.exports = {
           green: "#B1C29E",
           blue: "#ADB2D4",
         },
+        rb: {
+          red: "#FFADAD",
+          orange: "#FFD6A5",
+          yellow: "#FDFFB6",
+          green: "#CAFFBF",
+          lightblue: "#9BF6FF",
+          blue: "#A0C4FF",
+          purple: "#BDB2FF",
+          pink: "#FFC6FF",
+          white: "#FFFFFC"
+        },
         primary: {
           100: "#f5f5f5",
           200: "#e5e5e5",

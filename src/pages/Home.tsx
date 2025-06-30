@@ -128,13 +128,31 @@ export function Home() {
   }, []);
 
   return (
-    <div className="min-h-[calc(100vh-var(--navbar-height))] bg-black flex flex-col justify-between">
-      <div className="grid grid-cols-9 gap-8 h-[60vh] w-full pt-8 px-8">
+    <div className="md:min-h-[calc(100vh-var(--navbar-height))] bg-black flex flex-col justify-between">
+      <div className="hidden md:grid grid-cols-9 gap-8 h-[60vh] w-full pt-8 px-8">
         <ImageGrid />
       </div>
-      <div className="flex justify-between p-8 items-end">
+
+      <div className="flex flex-col space-y-2 text-left md:flex-row justify-between p-4 md:p-8 md:items-end">
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+          className="visible md:hidden text-white font-bold text-6xl w-full"
+        >
+          Emmi <br />
+          Petersen
+        </motion.h1>
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2, ease: "easeOut", delay: 1 }}
+          className="visible md:hidden pt-[30vh] text-gumroad-yellow md:text-white font-sans text-2xl w-full md:text-4xl md:max-w-[40vw]"
+        >
+          Bay Area Strength Coach
+        </motion.h1>
         <h2
-          className={`text-white font-sans text-4xl max-w-[40vw] transition-opacity duration-1000 ${showText ? "opacity-100" : "opacity-0 translate-y-4"}`}
+          className={`text-white font-sans text-xl w-full md:text-4xl md:max-w-[40vw] transition-opacity duration-1000 ${showText ? "opacity-100" : "opacity-0 translate-y-4"}`}
           style={{
             transitionDelay: showText ? "0ms" : "0ms",
             transitionTimingFunction: "linear",
@@ -143,8 +161,15 @@ export function Home() {
           Let’s work together to discover what it means to you to feel embodied,
           empowered, and strong.
         </h2>
+        <div className="visible md:hidden w-full py-12">
+          <img
+            src="headshot1.jpg"
+            alt="Emmi headshot"
+            className="aspect-square object-cover"
+          />
+        </div>
         <div
-          className={`transition-opacity duration-700 ${showButton ? "opacity-100" : "opacity-0 translate-y-8"}`}
+          className={`pb-8 md:pb-0 transition-opacity duration-700 ${showButton ? "opacity-100" : "opacity-0 translate-y-8"}`}
           style={{
             transitionDelay: showButton ? "0ms" : "0ms",
             transitionTimingFunction: "linear",
