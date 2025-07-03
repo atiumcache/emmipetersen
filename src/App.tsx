@@ -1,27 +1,22 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./fonts.css";
 
-import { Navbar } from "./components/Navbar";
-import { Footer } from "./components/Footer";
 import { Home } from "./pages/Home";
-import Services from "./pages/Services";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
-import ServicesNew from "./pages/ServicesNew";
+import { Services } from "./pages/Services";
+import { About } from "./pages/About";
+import { Contact } from "./pages/Contact";
+import { NotFound } from "./pages/NotFound";
 
 function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen bg-black">
-        <Navbar />
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/services-new" element={<ServicesNew />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

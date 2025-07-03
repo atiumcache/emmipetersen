@@ -10,7 +10,7 @@ interface FadeInProps {
 export function FadeIn({
   children,
   className = "",
-  delay = "500ms",
+  delay = "0ms",
 }: FadeInProps) {
   const [ref, isVisible] = useIntersectionObserver({
     threshold: 0.1,
@@ -21,11 +21,11 @@ export function FadeIn({
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
       className={`${className} transition-all ${
-        isVisible ? "opacity-100" : "opacity-0 translate-y-10"
+        isVisible ? "opacity-100" : "opacity-0 translate-y-7"
       }`}
       style={{
         transitionDelay: isVisible ? delay : "0ms",
-        transitionDuration: "2000ms",
+        transitionDuration: "1300ms",
         transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
       }}
     >

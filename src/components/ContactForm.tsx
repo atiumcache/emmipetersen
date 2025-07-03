@@ -2,8 +2,18 @@ import { useState, useEffect, useRef } from "react";
 import type { FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import { Button } from "./ui/button";
+import { NavbarNew } from "./Navbar";
+import { FadeIn } from "./FadeIn";
 
-export function ContactForm() {
+type ContactFormProps = {
+  twBackgroundClass?: string;
+  twButtonClass?: string;
+};
+
+export function ContactForm({
+  twBackgroundClass,
+  twButtonClass,
+}: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error"
@@ -62,16 +72,20 @@ export function ContactForm() {
   };
 
   return (
-    <div className="relative overflow-hidden bg-white">
+    <div
+      className={`relative flex flex-col justify-between ${twBackgroundClass}`}
+    >
       {/* Background gradient elements */}
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <FadeIn
+        className={`flex flex-col justify-between ${twBackgroundClass} max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8 sm:py-24`}
+      >
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
               Let's Connect
             </h2>
-            <p className="text-xl text-gray-700">
+            <p className="text-xl text-slate-200">
               Have a question or want to work together? Send me a message!
             </p>
           </div>
@@ -81,7 +95,7 @@ export function ContactForm() {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-slate-200 mb-1"
                 >
                   Name
                 </label>
@@ -90,7 +104,7 @@ export function ContactForm() {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gumroad-purple/50 focus:border-gumroad-purple transition-all duration-200"
+                  className="placeholder-slate-200 w-full px-4 py-3 bg-white/30 backdrop-blur-sm text-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white transition-all duration-200"
                   placeholder="Your name"
                 />
               </div>
@@ -98,7 +112,7 @@ export function ContactForm() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-slate-200 mb-1"
                 >
                   Email
                 </label>
@@ -107,7 +121,7 @@ export function ContactForm() {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gumroad-purple/50 focus:border-gumroad-purple transition-all duration-200"
+                  className="placeholder-slate-200 w-full px-4 py-3 bg-white/30 backdrop-blur-sm text-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white transition-all duration-200"
                   placeholder="Your email"
                 />
               </div>
@@ -115,7 +129,7 @@ export function ContactForm() {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-slate-200 mb-1"
                 >
                   Message
                 </label>
@@ -124,7 +138,7 @@ export function ContactForm() {
                   name="message"
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gumroad-purple/50 focus:border-gumroad-purple transition-all duration-200"
+                  className="placeholder-slate-200 w-full px-4 py-3 bg-white/30 backdrop-blur-sm text-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white transition-all duration-200"
                   placeholder="Tell me about your goals..."
                 />
               </div>
@@ -134,7 +148,7 @@ export function ContactForm() {
               <Button
                 type="submit"
                 disabled={isSubmitting || submitStatus === "success"}
-                className="w-full bg-black text-white hover:bg-gray-900 transition-colors"
+                className={`w-full mb-10 border-white ${twButtonClass ? twButtonClass : "bg-slate-600"} text-white hover:!bg-slate-300 hover:!text-slate-900 hover:!border-slate-500 transition-colors`}
               >
                 {isSubmitting
                   ? "Sending..."
@@ -151,7 +165,7 @@ export function ContactForm() {
             )}
           </form>
         </div>
-      </div>
+      </FadeIn>
     </div>
   );
 }

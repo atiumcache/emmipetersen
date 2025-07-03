@@ -38,15 +38,16 @@
 
     --radius: 0.5rem;
 
-    --chart-1: 12 76% 61%;
-
-    --chart-2: 173 58% 39%;
-
-    --chart-3: 197 37% 24%;
-
-    --chart-4: 43 74% 66%;
-
-    --chart-5: 27 87% 67%;
+    --forest-light: #95C639;
+    --forest-med: #7EA831;
+    --forest-dark: #455C1B;
+    --salmon-light: #F054A4;
+    --salmon-medium: #B33F7B;
+    --salmon-dark: #662446;
+    --aqua-light: #6E98E6;
+    --aqua-medium: #496AB3;
+    --aqua-dark: #0B1D51;
+    
   }
 
   .dark {

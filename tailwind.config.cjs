@@ -1,5 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  safelist: [
+    // Salmon
+    'border-salmon-light', 'hover:border-salmon-light',
+    'border-salmon-medium', 'hover:border-salmon-medium',
+    'border-salmon-dark', 'hover:border-salmon-dark',
+    // Aqua
+    'border-aqua-light', 'hover:border-aqua-light',
+    'border-aqua-medium', 'hover:border-aqua-medium',
+    'border-aqua-dark', 'hover:border-aqua-dark',
+    // Forest
+    'border-forest-light', 'hover:border-forest-light',
+    'border-forest-med', 'hover:border-forest-med',
+    'border-forest-dark', 'hover:border-forest-dark',
+  ],
   darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -28,23 +42,24 @@ module.exports = {
       fontFamily: {
         brand: ["Syne", "sans-serif"],
         sans: ["IBM Plex Sans", "sans-serif"],
-        cine: ["GT Cinetype", 'sans-serif'],
         round8: ["Round8", 'sans-serif'],
-        knewave: ["knewave", 'sans-serif'],
+        gnomon: ["Gnomon", 'sans-serif'],
       },
       colors: {
+        'forest-light': '#95C639',
+        'forest-med': '#7EA831',
+        'forest-dark': '#455C1B',
+        'salmon-light': '#B37A97',
+        'salmon-medium': '#B33F7B',
+        'salmon-dark': '#662446',
+        'aqua-light': '#6E98E6',
+        'aqua-medium': '#496AB3',
+        'aqua-dark': '#0B1D51',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        gumroad: {
-          purple: "#9B51E0",
-          pink: "#E6B2BA",
-          yellow: "#FADA7A",
-          green: "#B1C29E",
-          blue: "#ADB2D4",
-        },
         rb: {
           red: "#FFADAD",
           orange: "#FFD6A5",

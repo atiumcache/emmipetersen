@@ -1,83 +1,98 @@
-import { Link } from "react-router-dom";
-import { Button } from "./ui/button";
-import { MobileMenu } from "./MobileMenu";
 import { useEffect, useState } from "react";
-import { BOOKING_LINK } from "../constants";
+import { Dumbbell } from "lucide-react";
+import { MobileMenu } from "./MobileMenu";
+import { getHexFromColorName } from "../utils/colorMap";
+import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
-export function Navbar() {
+interface NavbarProps {
+  color?: string;
+  sticky?: boolean;
+}
+
+export function Navbar({ color = "black", sticky = true }: NavbarProps) {
+  const resolvedColor = getHexFromColorName(color);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const scrolled = window.scrollY > 50 && sticky;
+      setIsScrolled(scrolled);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
-      className={`sticky top-0 z-50 transition-all duration-200 ${
-        isScrolled ? "bg-black shadow-lg" : "bg-black"
+      className={`${sticky ? "sticky" : "relative"} top-3 left-0 right-0  max-w-[calc(100vw-1rem)] px-3 py-2 md:py-4 mx-4 md:mx-8 rounded-lg transition-all duration-500 items-center z-50 ${
+        isScrolled
+          ? "bg-white backdrop-blur-sm shadow-lg translate-y-2 md:px-8"
+          : "bg-white/0 backdrop-blur-none shadow-none md:px-4"
       }`}
+      style={{
+        color: isScrolled ? resolvedColor : "white",
+        borderColor: isScrolled ? resolvedColor : "white",
+      }}
+      id="mainNav"
     >
-      <div className="px-8 py-4 m-0 items-center justify-center ">
-        <div className="grid grid-cols-2 md:grid-cols-3 items-center font-sans uppercase">
-          {/* Center - Logo */}
-          <div className="flex justify-start">
-            <Link
-              to="/"
-              className="text-white hover:opacity-70 transition-opacity flex justify-center"
-            >
-              <img
-                src="/dumbbell-logo.png"
-                alt="Logo"
-                className="w-[4em] h-auto py-3"
-              />
-            </Link>
-          </div>
+      <div className="w-full grid grid-cols-2 md:grid-cols-3 items-center font-sans uppercase">
+        <h1
+          className={`w-full text-4xl lowercase font-gnomon font-bold transition-all duration-500 translate-y-1 hover:translate-y-0 ${isScrolled ? "hover:!text-slate-700" : "hover:!text-slate-200"}`}
+          style={{ color: isScrolled ? resolvedColor : "white" }}
+        >
+          <Link to="/" className="hover:translate-y-0">
+            emmi
+          </Link>
+        </h1>
+        <Dumbbell
+          className="hidden w-8 h-8 transition-all duration-300 hover:scale-105"
+          strokeWidth={1.3}
+        />
+        <img
+          src="/dumbbell-logo.png"
+          alt="Dumbbell Logo"
+          className="hidden w-16 py-2 transition-transform duration-300 hover:scale-105"
+        />
 
-          {/* Left side - Menu options */}
-          <div className="hidden md:flex items-center justify-center space-x-6">
-            <Link
-              to="/about"
-              className="text-white hover:text-orange-300 transition-colors duration-500"
-            >
-              About
-            </Link>
-            <p className="text-white">|</p>
-            <Link
-              to="/services"
-              className="text-white hover:text-green-300 transition-colors duration-500"
-            >
-              Services
-            </Link>
-            <p className="text-white">|</p>
-            <Link
-              to="https://emmipetersen.substack.com/"
-              className="text-white hover:text-blue-300 transition-colors duration-500"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Newsletter
-            </Link>
-          </div>
+        {/* Center - Menu options */}
+        <div className="hidden md:flex items-center justify-center space-x-6 ">
+          <Link
+            to="/about"
+            className={`hover:-translate-y-1 transition-all duration-500 hover:text-blue-300 ${isScrolled ? (color ? `text-${color}` : "text-black") : "text-white"}`}
+          >
+            About
+          </Link>
+          <p className={color ? `text-${color}` : "text-black"}>|</p>
+          <Link
+            to="/services"
+            className={`hover:-translate-y-1 transition-all duration-500 hover:text-pink-300 ${isScrolled ? (color ? `text-${color}` : "text-black") : "text-white"}`}
+          >
+            Services
+          </Link>
+          <p className={color ? `text-${color}` : "text-black"}>|</p>
+          <Link
+            to="https://emmipetersen.substack.com/"
+            className={`hover:-translate-y-1 transition-all duration-500 hover:text-forest-light ${isScrolled ? (color ? `text-${color}` : "text-black") : "text-white"}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Newsletter
+          </Link>
+        </div>
 
-          {/* Right side - Menu option + Button */}
-          <div className="hidden md:flex items-center justify-end space-x-8">
-            <Button
-              asChild
-              variant="outline"
-              className="bg-transparent border-white text-white hover:bg-white hover:border-white hover:text-black duration-300 transition-colors"
-            >
-              <a href={BOOKING_LINK.fullUrl}>Contact</a>
-            </Button>
-          </div>
-
-          {/* Mobile menu toggle */}
-          <div className="md:hidden text-right">
-            <MobileMenu />
-          </div>
+        <div className="hidden md:flex items-center justify-end space-x-8">
+          <Button
+            asChild
+            variant="outline"
+            className={`bg-transparent rounded-[50%] duration-300 transition-colors hover:scale-105 ${isScrolled ? `${color ? `text-${color} border-${color} hover:text-slate-500 hover:border-slate-500` : "text-black border-black"}` : "text-white border-white hover:text-white/70 hover:border-white/70"}`}
+          >
+            <a href="/contact">Contact</a>
+          </Button>
+        </div>
+        <div className="md:hidden justify-self-end">
+          <MobileMenu isScrolled={isScrolled} color={resolvedColor} />
         </div>
       </div>
     </nav>

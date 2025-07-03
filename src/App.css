@@ -57,3 +57,17 @@ h1 {
   color: #888;
 }
 
+.rainbow-text {
+  background: linear-gradient(90deg, #ff0057, #fffd38, #00ff90, #00cfff, #a259ff, #ff0057 90%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-move 4s linear infinite;
+}
+@keyframes rainbow-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
