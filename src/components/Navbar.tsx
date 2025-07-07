@@ -44,21 +44,12 @@ export function Navbar({ color = "black", sticky = true }: NavbarProps) {
         >
           <Link to="/" className="hover:-translate-y-1">
             <img
-              src="/dumbbell-logo.png"
+              src={`${isScrolled ? "/db-logo-rich-color.png" : "/db-logo.png"}`}
               alt="Emmi Logo"
-              className="w-20 hover:-translate-y-1 transition-all"
+              className="w-16 m-2 md:w-20 md:m-0 hover:scale-105 hover:cursor-pointer transition-all"
             />
           </Link>
         </h1>
-        <Dumbbell
-          className="hidden w-8 h-8 transition-all duration-300 hover:scale-105"
-          strokeWidth={1.3}
-        />
-        <img
-          src="/dumbbell-logo.png"
-          alt="Dumbbell Logo"
-          className="hidden w-16 py-2 transition-transform duration-300 hover:scale-105"
-        />
 
         {/* Center - Menu options */}
         <div className="hidden md:flex items-center justify-center space-x-6 ">
