@@ -13,8 +13,8 @@ export function FadeIn({
   delay = "0ms",
 }: FadeInProps) {
   const [ref, isVisible] = useIntersectionObserver({
-    threshold: 0.1,
-    rootMargin: "-50px 0px -100px 0px", // Start animation a bit before element is in view
+    threshold: 0.03, // Lower threshold for earlier detection
+    rootMargin: "-10% 0px -15% 0px", // Start animation much earlier (20% of viewport height)
   });
 
   return (

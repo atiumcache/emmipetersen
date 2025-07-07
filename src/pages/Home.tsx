@@ -9,10 +9,10 @@ const siteCopy = loadContent();
 
 export function Home() {
   return (
-    <div className="min-h-screen bg-salmon-dark md:bg-salmon-medium flex flex-col justify-between">
+    <div className="min-h-screen bg-slate-500 md:bg-salmon-medium flex flex-col justify-between">
       <Navbar color="aqua-medium" sticky={false} />
-      <div className="bg-salmon-dark md:bg-salmon-medium h-[3vh]"></div>
-      <div className="md:h-[80vh] flex-1 grid grid-cols-1 md:grid-cols-2 bg-salmon-dark md:bg-[#FF9587]">
+      <div className="bg-slate-500 md:bg-salmon-medium h-[3vh]"></div>
+      <div className="md:h-[80vh] flex-1 grid grid-cols-1 md:grid-cols-2 bg-slate-500 md:bg-[#FF9587]">
         <div className="w-full h-full pointer-events-none aspect-square md:aspect-auto">
           <img
             src="/headshot1.jpg"
@@ -28,12 +28,12 @@ export function Home() {
             Strong. Embodied. Authentic.
           </FadeIn>
           <FadeIn
-            delay="700ms"
+            delay="300ms"
             className="font-sans text-center md:text-left text-2xl w-full md:text-2xl md:max-w-[40vw]"
           >
             Private strength coaching in San Francisco and Marin.
           </FadeIn>
-          <FadeIn delay="1200ms" className={`pb-8 md:pb-0`}>
+          <FadeIn delay="300ms" className={`pb-8 md:pb-0`}>
             <Button
               asChild
               variant="outline"
