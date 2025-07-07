@@ -90,6 +90,27 @@ function ServiceCard({ title, shortDesc, description, id }: ServiceCardProps) {
   );
 }
 
+const HowItWorks = () => {
+  return (
+    <FadeIn>
+      <h2 className="font-spartan uppercase text-2xl md:text-5xl font-bold pb-4">
+        How It Works
+      </h2>
+      <ul className="list-disc pl-5 text-xl  space-y-2">
+        <li>
+          All services begin with a free consultation where we discuss your
+          goals, history, lifestyle, and relationship with movement.
+        </li>
+        <li>
+          We will go through a movement “assessment” so we can create a program
+          that meets you exactly where you are and encourages progress over
+          perfection.
+        </li>
+      </ul>
+    </FadeIn>
+  );
+};
+
 export function Services() {
   return (
     <>
@@ -111,14 +132,20 @@ export function Services() {
             {services.map((service) => (
               <ServiceCard key={service.id} {...service} />
             ))}
-            <p className="italic">
-              *If cost of service is a barrier to entry, please contact me at
-              helloemmipetersen@gmail.com to discuss sliding scale options.{" "}
-              <br className="my-4" />
-              *If you’re able to cover more than your share to help offset
-              sliding scale prices and increase accessibility to safe strength
-              training, please contact me at helloemmipetersen@gmail.com.
-            </p>
+          </div>
+          <div className="flex flex-col space-y-[10vh] md:space-y-[15vh] pt-[15vh]">
+            <HowItWorks />
+            <FadeIn className="italic w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-28">
+              <p className="">
+                * If cost of service is a barrier to entry, please contact me at
+                helloemmipetersen@gmail.com to discuss sliding scale options. *
+              </p>
+              <p>
+                * If you’re able to cover more than your share to help offset
+                sliding scale prices and increase accessibility to safe strength
+                training, please contact me at helloemmipetersen@gmail.com.
+              </p>
+            </FadeIn>
           </div>
         </div>
         <ContactForm
