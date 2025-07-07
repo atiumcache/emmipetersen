@@ -57,15 +57,7 @@ interface ServiceType {
 
 interface ServiceCardProps extends ServiceType {}
 
-function ServiceCard({
-  title,
-  shortDesc,
-  description,
-  icon,
-  color,
-  id,
-  price,
-}: ServiceCardProps) {
+function ServiceCard({ title, shortDesc, description, id }: ServiceCardProps) {
   return (
     <FadeIn className="grid grid-cols-1 md:grid-cols-10 px-2 md:px-4 gap-4 md:gap-8 border-t pt-4">
       <p className="font-spartan text-2xl md:text-3xl font-bold">0{id}</p>
