@@ -1,6 +1,6 @@
 export function SunLinesGraphic() {
   return (
-    <div className="flex flex-col md:flex-row justify-center items-center pb-[5vh] pt-[25vh] md:pt-[15vh]">
+    <div className="flex flex-col md:flex-row justify-center items-center pb-[5vh] pt-[25vh] md:pt-[15vh] max-w-[100vw]">
       <img
         src="/sunlines-extend.png"
         alt=""
