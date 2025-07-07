@@ -9,10 +9,10 @@ const siteCopy = loadContent();
 
 export function Home() {
   return (
-    <div className="min-h-screen bg-slate-700 md:bg-yellow-700 flex flex-col justify-between">
+    <div className="min-h-screen bg-slate-700 md:bg-salmon-medium flex flex-col justify-between">
       <Navbar color="aqua-medium" sticky={false} />
-      <div className="bg-slate-700 md:bg-yellow-700 h-[3vh]"></div>
-      <div className="md:h-[80vh] flex-1 grid grid-cols-1 md:grid-cols-2 bg-slate-700 md:bg-slate-700">
+      <div className="bg-slate-700 md:bg-salmon-medium h-[3vh]"></div>
+      <div className="md:h-[80vh] flex-1 grid grid-cols-1 md:grid-cols-2 bg-slate-700 md:bg-[#FF9587]">
         <div className="w-full h-full pointer-events-none aspect-square md:aspect-auto">
           <img
             src="/headshot1.jpg"
@@ -21,14 +21,19 @@ export function Home() {
             style={{ opacity: 1 }} // Adjust opacity as needed
           />
         </div>
-        <div className="flex flex-col items-center md:items-start justify-center space-y-8 md:space-y-12 p-6 pt-8 md:p-16">
+        <div className="flex flex-col text-white items-center md:items-start justify-center space-y-8 md:space-y-12 p-6 pt-8 md:p-16">
           <FadeIn
-            className={`text-white font-sans font-semibold text-center md:text-left text-2xl w-full md:text-4xl md:max-w-[40vw] transition-opacity duration-1000 `}
+            className={`font-sans font-semibold text-center md:text-left text-3xl w-full md:text-8xl md:max-w-[40vw] transition-opacity duration-1000 `}
           >
-            Let’s dig into what power feels like in{" "}
-            <span className="italic">your</span> body.
+            Strong. Embodied. Authentic.
           </FadeIn>
-          <div className={`pb-8 md:pb-0`}>
+          <FadeIn
+            delay="700ms"
+            className="font-sans text-center md:text-left text-2xl w-full md:text-2xl md:max-w-[40vw]"
+          >
+            Private strength coaching in San Francisco and Marin.
+          </FadeIn>
+          <FadeIn delay="1200ms" className={`pb-8 md:pb-0`}>
             <Button
               asChild
               variant="outline"
@@ -36,7 +41,7 @@ export function Home() {
             >
               <Link to="/contact">{siteCopy.home.hero.button}</Link>
             </Button>
-          </div>
+          </FadeIn>
         </div>
       </div>
 

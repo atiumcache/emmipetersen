@@ -1,40 +1,47 @@
 import { Navbar } from "../components/Navbar";
 import { FadeIn } from "../components/FadeIn";
-import { Dumbbell, Users, MapPinHouse } from "lucide-react";
+import { Dumbbell, Users, MapPinHouse, ArrowUpRight } from "lucide-react";
 import { SunLinesGraphic } from "../components/SunLinesGraphic";
 import { Footer } from "../components/Footer";
 import { ContactForm } from "../components/ContactForm";
+import { Link } from "react-router-dom";
 
 const services = [
   {
     id: 1,
-    title: "Strength Coaching",
+    title: "Private Coaching",
     shortDesc: "1:1 Custom Workouts",
-    description:
-      "Personalized training programs tailored to your goals, whether you're looking to build strength, lose weight, or improve overall fitness. Each session is customized to your fitness level and preferences.",
+    description: [
+      "One-on-one sessions designed to build strength, improve balance and stability, and support your unique goals",
+      "Thoughtfully structured programs delivered in 4–8 week blocks to support progress and adaptation",
+    ],
     icon: <Dumbbell className="w-10 h-10" />,
     color: "#FFADAD", // Pastel red
-    price: "$150",
+    price: "",
   },
   {
     id: 2,
-    title: "Small Group",
-    shortDesc: "2-3 Individuals",
-    description:
-      "Customized nutrition plans designed to fuel your body and support your fitness goals. Learn about proper portion sizes, macronutrient balance, and how to make sustainable dietary changes.",
+    title: "Semi-Private Coaching",
+    shortDesc: "2-3 People",
+    description: [
+      "Small group sessions that blend personalized coaching with community support",
+      "More affordable option than one-on-one training, with slightly less individualized attention",
+    ],
     icon: <Users className="w-10 h-10" />,
     color: "#CAFFBF",
-    price: "$95",
+    price: "",
   },
   {
     id: 3,
-    title: "In-Home / Virtual",
-    shortDesc: "I come to you!",
-    description:
-      "Join our community in energetic group workouts that combine strength training, cardio, and mobility exercises. Perfect for those who thrive in a social, motivating environment.",
+    title: "Virtual Coaching",
+    shortDesc: "Train from anywhere",
+    description: [
+      "Virtual one-on-one sessions designed to build strength, improve balance and stability, and support your personal goals",
+      "Live coaching via Zoom or FaceTime as you train at home, in your personal gym, or outdoors",
+    ],
     icon: <MapPinHouse className="w-10 h-10" />,
     color: "#BDB2FF",
-    price: "$110",
+    price: "",
   },
 ];
 
@@ -42,7 +49,7 @@ interface ServiceType {
   id: number;
   title: string;
   shortDesc: string;
-  description: string;
+  description: string | string[]; // Can be a string or array of strings for bullet points
   icon: React.ReactNode;
   color: string;
   price: string;
@@ -60,31 +67,6 @@ function ServiceCard({
   price,
 }: ServiceCardProps) {
   return (
-    <FadeIn className=" px-4 py-4 mx-auto md:px-8 w-full transition-all border-x">
-      <div className="flex items-center gap-4 mb-4">
-        <div className="flex flex-col w-full">
-          <div className="flex flex-col md:flex-row justify-between items-left md:items-center">
-            <h3 className="text-xl font-bold uppercase">{title}</h3>
-            <h3 className="text-md font-bold">{price}+ / Session</h3>
-          </div>
-          <p className="text-white text-left">{shortDesc}</p>
-        </div>
-      </div>
-      <p className="text-white text-left max-w-[80vw]">{description}</p>
-    </FadeIn>
-  );
-}
-
-function ServiceCardCrazy({
-  title,
-  shortDesc,
-  description,
-  icon,
-  color,
-  id,
-  price,
-}: ServiceCardProps) {
-  return (
     <FadeIn className="grid grid-cols-1 md:grid-cols-10 px-2 md:px-4 gap-4 md:gap-8 border-t pt-4">
       <p className="font-spartan text-2xl md:text-3xl font-bold">0{id}</p>
       <div className="col-span-1 md:col-span-3">
@@ -93,10 +75,24 @@ function ServiceCardCrazy({
         </h3>
         <p>{shortDesc}</p>
       </div>
-      <div className="md:col-span-4 text-lg">{description}</div>
+      <div className="md:col-span-4 text-lg my-6 md:my-0">
+        {Array.isArray(description) ? (
+          <ul className="list-disc pl-5 space-y-2">
+            {description.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>{description}</p>
+        )}
+      </div>
       <div className="md:col-span-2 text-lg flex flex-col md:items-end">
-        <p>{price} / session</p>
-        <p>Learn more</p>
+        {/* <p className="hidden">{price} / session</p> */}
+        <button className="py-1 px-2 border border-1 rounded-lg border-white mr-auto md:mr-0 my-4 hover:bg-white/20">
+          <Link to="/contact" className="flex items-center gap-2 ">
+            Inquire <ArrowUpRight />
+          </Link>
+        </button>
       </div>
     </FadeIn>
   );
@@ -118,16 +114,24 @@ export function Services() {
             </FadeIn>
           </div>
         </div>
-        <div className="flex flex-col pt-[25vh] pb-24 px-4 md:px-12 md:py-[25vh] mr-auto">
-          <div className="flex flex-col space-y-[25vh]">
+        <div className="flex flex-col pt-[25vh] pb-24 px-4 md:px-12 md:pt-[25vh] md:pb-[10vh] mr-auto">
+          <div className="flex flex-col space-y-[15vh] md:space-y-[25vh]">
             {services.map((service) => (
-              <ServiceCardCrazy key={service.id} {...service} />
+              <ServiceCard key={service.id} {...service} />
             ))}
+            <p className="italic">
+              *If cost of service is a barrier to entry, please contact me at
+              helloemmipetersen@gmail.com to discuss sliding scale options.{" "}
+              <br className="my-4" />
+              *If you’re able to cover more than your share to help offset
+              sliding scale prices and increase accessibility to safe strength
+              training, please contact me at helloemmipetersen@gmail.com.
+            </p>
           </div>
         </div>
         <ContactForm
           twBackgroundClass="bg-salmon-light"
-          twButtonClass="bg-salmon-dark"
+          twButtonClass="bg-salmon-medium"
         />
 
         {/* <ContactCTA darkColor="salmon-medium" lightColor="salmon-light" /> */}

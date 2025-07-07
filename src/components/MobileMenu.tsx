@@ -1,7 +1,4 @@
 import { Link } from "react-router-dom";
-import { Button } from "./ui/button";
-import { Menu } from "lucide-react";
-import { BOOKING_LINK } from "../constants";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "./ui/sheet";
 
 interface MobileMenuProps {

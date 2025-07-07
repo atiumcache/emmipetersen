@@ -10,7 +10,7 @@ export function Footer({ twBackgroundClass }: FooterProps) {
       >
         <p className="">&copy; {new Date().getFullYear()} Emmi Petersen</p>
         <p className="hidden md:block tracking-[1em]">///</p>
-        <p className="hidden md:block">Personal Trainer</p>
+        <p className="hidden md:block">Strength Coach</p>
         <p className="tracking-[1em]">///</p>
         <p className="hidden md:block">San Francisco, CA</p>
         <p className="md:hidden">SF, CA</p>

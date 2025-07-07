@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import type { FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import { Button } from "./ui/button";
-import { NavbarNew } from "./Navbar";
 import { FadeIn } from "./FadeIn";
 
 type ContactFormProps = {

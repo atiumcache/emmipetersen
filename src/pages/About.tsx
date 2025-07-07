@@ -1,8 +1,5 @@
-import { ContactCTA } from "../components/ContactCTA";
-import { Button } from "../components/ui/button";
 import { FadeIn } from "../components/FadeIn";
 import { Navbar } from "../components/Navbar";
-import { Link } from "react-router";
 import { loadContent } from "../lib/content";
 import { SunLinesGraphic } from "../components/SunLinesGraphic";
 import { Footer } from "../components/Footer";
@@ -47,7 +44,7 @@ function AboutSection1() {
             {siteCopy.about.heading}
           </h1>
         </FadeIn>
-        <div className="relative flex flex-col space-y-12 md:px-12 pt-[12vh] md:pt-[20vh]">
+        <div className="relative flex flex-col space-y-12 md:px-12 pt-[12vh] md:pt-[20vh] pb-[5vh]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="flex flex-col gap-12">
               <AboutParagraph text={siteCopy.about.content} />
@@ -56,14 +53,14 @@ function AboutSection1() {
                 className="hidden md:block"
               />
             </div>
-            <AboutImg src="headshot-car.jpg" />
+            <AboutImg src="about2.jpg" />
             <AboutParagraph
               text={siteCopy.about.content2}
               className="block md:hidden"
             />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <AboutImg src="headshot5.jpg" />
+            <AboutImg src="about1.jpg" />
             <div className="flex flex-col gap-12">
               <AboutParagraph text={siteCopy.about.content3} />
               <AboutParagraph text={siteCopy.about.content4} />
@@ -75,9 +72,8 @@ function AboutSection1() {
       </div>
       <ContactForm
         twBackgroundClass="bg-aqua-light"
-        twButtonClass="bg-aqua-dark"
+        twButtonClass="bg-aqua-medium"
       />
-      {/* <ContactCTA darkColor="aqua-medium" lightColor="aqua-light" /> */}
       <Footer twBackgroundClass="bg-aqua-medium" />
     </div>
   );

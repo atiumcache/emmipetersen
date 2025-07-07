@@ -1,4 +1,3 @@
-import { FadeIn } from "./FadeIn";
 import { Button } from "./ui/button";
 import { getHexFromColorName } from "../utils/colorMap";
 

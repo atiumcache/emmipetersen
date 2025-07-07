@@ -39,11 +39,15 @@ export function Navbar({ color = "black", sticky = true }: NavbarProps) {
     >
       <div className="w-full grid grid-cols-2 md:grid-cols-3 items-center font-sans uppercase">
         <h1
-          className={`w-full text-4xl lowercase font-gnomon font-bold transition-all duration-500 translate-y-1 hover:translate-y-0 ${isScrolled ? "hover:!text-slate-700" : "hover:!text-slate-200"}`}
+          className={`w-full text-4xl lowercase font-gnomon font-bold transition-all duration-500 translate-y-0 hover:translate-y-0 ${isScrolled ? "hover:!text-slate-700" : "hover:!text-slate-200"}`}
           style={{ color: isScrolled ? resolvedColor : "white" }}
         >
-          <Link to="/" className="hover:translate-y-0">
-            emmi
+          <Link to="/" className="hover:-translate-y-1">
+            <img
+              src="/dumbbell-logo.png"
+              alt="Emmi Logo"
+              className="w-20 hover:-translate-y-1 transition-all"
+            />
           </Link>
         </h1>
         <Dumbbell
