@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Dumbbell } from "lucide-react";
 import { MobileMenu } from "./MobileMenu";
 import { getHexFromColorName } from "../utils/colorMap";
 import { Button } from "./ui/button";
