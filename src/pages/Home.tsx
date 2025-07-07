@@ -9,10 +9,10 @@ const siteCopy = loadContent();
 
 export function Home() {
   return (
-    <div className="min-h-screen bg-slate-700 md:bg-salmon-medium flex flex-col justify-between">
+    <div className="min-h-screen bg-salmon-dark md:bg-salmon-medium flex flex-col justify-between">
       <Navbar color="aqua-medium" sticky={false} />
-      <div className="bg-slate-700 md:bg-salmon-medium h-[3vh]"></div>
-      <div className="md:h-[80vh] flex-1 grid grid-cols-1 md:grid-cols-2 bg-slate-700 md:bg-[#FF9587]">
+      <div className="bg-salmon-dark md:bg-salmon-medium h-[3vh]"></div>
+      <div className="md:h-[80vh] flex-1 grid grid-cols-1 md:grid-cols-2 bg-salmon-dark md:bg-[#FF9587]">
         <div className="w-full h-full pointer-events-none aspect-square md:aspect-auto">
           <img
             src="/headshot1.jpg"
@@ -23,7 +23,7 @@ export function Home() {
         </div>
         <div className="flex flex-col text-white items-center md:items-start justify-center space-y-8 md:space-y-12 p-6 pt-8 md:p-16">
           <FadeIn
-            className={`font-sans font-semibold text-center md:text-left text-3xl w-full md:text-8xl md:max-w-[40vw] transition-opacity duration-1000 `}
+            className={`font-sans font-semibold text-center md:text-left text-5xl w-full md:text-8xl md:max-w-[40vw] transition-opacity duration-1000 `}
           >
             Strong. Embodied. Authentic.
           </FadeIn>
