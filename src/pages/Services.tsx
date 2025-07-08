@@ -98,8 +98,8 @@ const HowItWorks = () => {
       </h2>
       <ul className="list-disc pl-5 text-xl  space-y-2">
         <li>
-          All services begin with a free consultation where we discuss your
-          goals, history, lifestyle, and relationship with movement.
+          All services begin with a consultation where we discuss your goals,
+          history, lifestyle, and relationship with movement.
         </li>
         <li>
           We will go through a movement “assessment” so we can create a program
