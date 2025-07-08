@@ -127,18 +127,19 @@ export function Services() {
             </FadeIn>
           </div>
         </div>
-        <div className="flex flex-col pt-[25vh] pb-24 px-4 md:px-12 md:pt-[25vh] md:pb-[10vh] mr-auto">
+        <div className="flex flex-col pt-[25vh] pb-4 px-4 md:px-12 md:pt-[25vh] mr-auto">
           <div className="flex flex-col space-y-[15vh] md:space-y-[25vh]">
             {services.map((service) => (
               <ServiceCard key={service.id} {...service} />
             ))}
           </div>
-          <div className="flex flex-col space-y-[10vh] md:space-y-[15vh] pt-[15vh]">
+          <div className="flex flex-col bg-white text-salmon-dark rounded-xl space-y-[10vh] md:space-y-[15vh] mx-2 my-20 md:m-[15vh] p-8 md:p-12">
             <HowItWorks />
             <FadeIn className="italic w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-28">
               <p className="">
                 * If cost of service is a barrier to entry, please contact me at
-                helloemmipetersen@gmail.com to discuss sliding scale options. *
+                helloemmipetersen@gmail.com to discuss sliding scale
+                options.{" "}
               </p>
               <p>
                 * If you’re able to cover more than your share to help offset
