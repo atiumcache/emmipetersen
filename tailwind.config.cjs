@@ -40,7 +40,6 @@ module.exports = {
         'gentlePulse': 'gentlePulse 2s ease-in-out infinite',
       },
       fontFamily: {
-        brand: ["Syne", "sans-serif"],
         sans: ["IBM Plex Sans", "sans-serif"],
         round8: ["Round8", 'sans-serif'],
         gnomon: ["Gnomon", 'sans-serif'],
