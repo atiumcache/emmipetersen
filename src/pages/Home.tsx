@@ -13,19 +13,16 @@ export function Home() {
       <Navbar color="aqua-medium" sticky={false} />
       <div className="bg-[#3A5546] md:bg-[#3A5546] h-[3vh]"></div>
       <div className="min-h-screen md:h-[90vh] flex flex-col md:flex-row bg-[#3A5546] md:bg-[#94aca3]">
-        <div className="flex flex-col text-white items-center md:items-center justify-center space-y-8 md:space-y-12 p-6 pt-8 md:p-16 order-2 md:order-1">
-          <FadeIn
+        <FadeIn className="flex flex-col text-white items-center md:items-center justify-center space-y-8 md:space-y-12 p-6 pt-8 md:p-16 order-2 md:order-1">
+          <div
             className={`font-sans font-semibold text-center md:text-center text-5xl w-full md:text-6xl lg:text-7xl xl:text-8xl md:max-w-[40vw] transition-opacity duration-1000 `}
           >
             Strong. Embodied. Authentic.
-          </FadeIn>
-          <FadeIn
-            delay="300ms"
-            className="font-sans text-center md:text-center text-2xl w-full md:text-2xl md:max-w-[40vw]"
-          >
+          </div>
+          <div className="font-sans text-center md:text-center text-2xl w-full md:text-2xl md:max-w-[40vw]">
             Private strength coaching in San Francisco and Marin.
-          </FadeIn>
-          <FadeIn delay="300ms" className={`pb-8 md:pb-0`}>
+          </div>
+          <div className={`pb-8 md:pb-0`}>
             <Button
               asChild
               variant="outline"
@@ -33,8 +30,8 @@ export function Home() {
             >
               <Link to="/contact">{siteCopy.home.hero.button}</Link>
             </Button>
-          </FadeIn>
-        </div>
+          </div>
+        </FadeIn>
         <div className="w-full md:w-auto md:h-full pointer-events-none aspect-square md:aspect-[1/1] md:flex-shrink-0 order-1 md:order-2">
           <img
             src="/filmy.jpg"
