@@ -12,7 +12,7 @@ export function Home() {
     <div className="min-h-screen bg-[#3A5546] md:bg-[#3A5546] flex flex-col justify-between">
       <Navbar color="aqua-medium" sticky={false} />
       <div className="bg-[#3A5546] md:bg-[#3A5546] h-[3vh]"></div>
-      <div className="min-h-screen md:h-[90vh] flex flex-col md:flex-row bg-[#3A5546] md:bg-[#94aca3]">
+      <div className="h-auto md:h-[90vh] flex flex-col md:flex-row bg-[#3A5546] md:bg-[#94aca3]">
         <FadeIn className="flex flex-col text-white items-center md:items-center justify-center space-y-8 md:space-y-12 p-6 pt-8 md:p-16 order-2 md:order-1">
           <div
             className={`font-sans font-semibold text-center md:text-center text-5xl w-full md:text-6xl lg:text-7xl xl:text-8xl md:max-w-[40vw] transition-opacity duration-1000 `}
