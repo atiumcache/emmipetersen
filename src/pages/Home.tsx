@@ -9,27 +9,19 @@ const siteCopy = loadContent();
 
 export function Home() {
   return (
-    <div className="min-h-screen bg-slate-500 md:bg-salmon-medium flex flex-col justify-between">
+    <div className="min-h-screen bg-[#3A5546] md:bg-[#3A5546] flex flex-col justify-between">
       <Navbar color="aqua-medium" sticky={false} />
-      <div className="bg-slate-500 md:bg-salmon-medium h-[3vh]"></div>
-      <div className="md:h-[77vh] flex-1 grid grid-cols-1 md:grid-cols-2 bg-slate-500 md:bg-[#FF9587]">
-        <div className="w-full h-full pointer-events-none aspect-square md:aspect-auto">
-          <img
-            src="/headshot1.jpg"
-            alt="Background"
-            className="w-full h-full object-cover"
-            style={{ opacity: 1 }} // Adjust opacity as needed
-          />
-        </div>
-        <div className="flex flex-col text-white items-center md:items-start justify-center space-y-8 md:space-y-12 p-6 pt-8 md:p-16">
+      <div className="bg-[#3A5546] md:bg-[#3A5546] h-[3vh]"></div>
+      <div className="min-h-screen md:h-[90vh] flex flex-col md:flex-row bg-[#3A5546] md:bg-[#94aca3]">
+        <div className="flex flex-col text-white items-center md:items-center justify-center space-y-8 md:space-y-12 p-6 pt-8 md:p-16 order-2 md:order-1">
           <FadeIn
-            className={`font-sans font-semibold text-center md:text-left text-5xl w-full md:text-6xl lg:text-7xl xl:text-8xl md:max-w-[40vw] transition-opacity duration-1000 `}
+            className={`font-sans font-semibold text-center md:text-center text-5xl w-full md:text-6xl lg:text-7xl xl:text-8xl md:max-w-[40vw] transition-opacity duration-1000 `}
           >
             Strong. Embodied. Authentic.
           </FadeIn>
           <FadeIn
             delay="300ms"
-            className="font-sans text-center md:text-left text-2xl w-full md:text-2xl md:max-w-[40vw]"
+            className="font-sans text-center md:text-center text-2xl w-full md:text-2xl md:max-w-[40vw]"
           >
             Private strength coaching in San Francisco and Marin.
           </FadeIn>
@@ -42,6 +34,14 @@ export function Home() {
               <Link to="/contact">{siteCopy.home.hero.button}</Link>
             </Button>
           </FadeIn>
+        </div>
+        <div className="w-full md:w-auto md:h-full pointer-events-none aspect-square md:aspect-[1/1] md:flex-shrink-0 order-1 md:order-2">
+          <img
+            src="/filmy.jpg"
+            alt="Background"
+            className="w-full h-full object-cover"
+            style={{ opacity: 1 }}
+          />
         </div>
       </div>
 

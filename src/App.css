@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: black;
+  background-color: white;
 }
 
 #root {
@@ -12,7 +12,7 @@ body {
   margin: 0 auto;
   padding: 0rem;
   text-align: center;
-  background-color: black;
+  background-color: white;
 }
 
 h1 {

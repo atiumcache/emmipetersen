@@ -53,14 +53,14 @@ function AboutSection1() {
                 className="hidden md:block"
               />
             </div>
-            <AboutImg src="about2.jpg" />
+            <AboutImg src="headshot-car.jpg" />
             <AboutParagraph
               text={siteCopy.about.content2}
               className="block md:hidden"
             />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <AboutImg src="about1.jpg" />
+            <AboutImg src="kettle-bridge.jpg" />
             <div className="flex flex-col gap-12">
               <AboutParagraph text={siteCopy.about.content3} />
               <AboutParagraph text={siteCopy.about.content4} />
