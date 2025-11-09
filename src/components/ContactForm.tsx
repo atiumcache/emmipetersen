@@ -127,6 +127,104 @@ export function ContactForm({
 
               <div>
                 <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-slate-200 mb-1"
+                >
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  className="placeholder-slate-200 w-full px-4 py-3 bg-white/30 backdrop-blur-sm text-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white transition-all duration-200"
+                  placeholder="Your phone number"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-slate-200 mb-2">
+                  Preferred Method of Contact
+                </label>
+                <div className="flex gap-4">
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="contact_method"
+                      value="text"
+                      required
+                      className="w-4 h-4 text-white bg-white/30 border-gray-200 focus:ring-white/50"
+                    />
+                    <span className="text-slate-200">Text</span>
+                  </label>
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="contact_method"
+                      value="email"
+                      className="w-4 h-4 text-white bg-white/30 border-gray-200 focus:ring-white/50"
+                    />
+                    <span className="text-slate-200">Email</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-slate-200 mb-2">
+                  How often would you like to train together?
+                </label>
+                <div className="flex flex-col gap-2">
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="frequency"
+                      value="1x per week"
+                      required
+                      className="w-4 h-4 text-white bg-white/30 border-gray-200 focus:ring-white/50"
+                    />
+                    <span className="text-slate-200">1x / week</span>
+                  </label>
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="frequency"
+                      value="2x per week"
+                      className="w-4 h-4 text-white bg-white/30 border-gray-200 focus:ring-white/50"
+                    />
+                    <span className="text-slate-200">2x / week</span>
+                  </label>
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="frequency"
+                      value="3x per week"
+                      className="w-4 h-4 text-white bg-white/30 border-gray-200 focus:ring-white/50"
+                    />
+                    <span className="text-slate-200">3x / week</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="availability"
+                  className="block text-sm font-medium text-slate-200 mb-1"
+                >
+                   I coach in Noe Valley and Mill Valley. What days, times, and location are you available for sessions?
+                </label>
+                
+                <textarea
+                  id="availability"
+                  name="availability"
+                  required
+                  rows={3}
+                  className="placeholder-slate-200 w-full px-4 py-3 bg-white/30 backdrop-blur-sm text-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white transition-all duration-200"
+                  placeholder="Let me know what times work best for you..."
+                />
+              </div>
+
+              <div>
+                <label
                   htmlFor="message"
                   className="block text-sm font-medium text-slate-200 mb-1"
                 >
