@@ -55,7 +55,7 @@ interface ServiceType {
   price: string;
 }
 
-interface ServiceCardProps extends ServiceType {}
+type ServiceCardProps = ServiceType;
 
 function ServiceCard({ title, shortDesc, description, id }: ServiceCardProps) {
   return (
