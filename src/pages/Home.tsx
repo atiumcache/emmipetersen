@@ -21,7 +21,7 @@ export function Home() {
           </div>
           <div className="font-sans text-center md:text-center text-2xl w-full md:text-2xl md:max-w-[40vw]">
             Private strength coaching in the Bay Area. <br />
-            Train with me in Noe Valley or Mill Valley.
+            Train with me in Mill Valley or San Francisco's Richmond District.
           </div>
           <div className={`pb-8 md:pb-0`}>
             <Button
