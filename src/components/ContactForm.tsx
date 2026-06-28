@@ -210,7 +210,7 @@ export function ContactForm({
                   htmlFor="availability"
                   className="block text-sm font-medium text-slate-200 mb-1"
                 >
-                   I coach in Noe Valley and Mill Valley. What days, times, and location are you available for sessions?
+                   I coach in the Richmond District and Mill Valley. What days, times, and location are you available for sessions?
                 </label>
                 
                 <textarea
