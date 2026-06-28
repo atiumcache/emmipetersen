@@ -20,8 +20,8 @@ export function Home() {
             Strong. Embodied. Authentic.
           </div>
           <div className="font-sans text-center md:text-center text-2xl w-full md:text-2xl md:max-w-[40vw]">
-            Private strength coaching in the Bay Area. <br />
-            Train with me in Mill Valley or San Francisco's Richmond District.
+            Private strength coaching in San Francisco. <br />
+            Train with me in the Richmond District.
           </div>
           <div className={`pb-8 md:pb-0`}>
             <Button
